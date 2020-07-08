@@ -15,4 +15,6 @@ class User < ApplicationRecord
   has_many :followeds_ids, class_name: 'Following', foreign_key: 'follower_id'
   has_many :followeds, through: :followeds_ids, source: 'following'
 
+  validates :username, :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true
 end
