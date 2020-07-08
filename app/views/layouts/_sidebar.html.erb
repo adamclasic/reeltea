@@ -1,0 +1,38 @@
+<nav class='sidebar position-fixed text-secondary h-100'>
+  <div class='d-flex p-2'>
+    <%if current_user.image.attached?%>
+      <%= image_tag(current_user.image, size: "50x50") %>
+    <%else%>
+      <div class='avatar'>
+        <%= image_tag('avatar.png', size: "50x50") %>
+      </div>
+    <%end%>
+    <h5 class='px-1 mx-auto my-auto'><%= current_user.name.upcase%></h5>
+  </div>
+  <div class='follow-counter f-row'>
+    <div class='d-flex'>
+      <div class='p-1'>
+        <%=current_user.followers.size%>
+        <p>Following</p>
+      </div>
+      <div class='p-1'>
+        <%=current_user.followeds.size%>
+        <p>Followers</p>
+      </div>
+    </div>
+  </div>
+  <div class='side-links text-white'>
+    <%= link_to tweets_path do %>
+      <div class='d-flex p-3 text-white'>
+        <i class='fas fa-home'></i>
+        <span>HOME</span>
+      </div>
+    <%end%>
+    <%= link_to user_path(current_user) do %>
+      <div class='d-flex p-3 text-white'>
+        <i class='fas fa-user'></i>
+        <span>PROFILE</span>
+      </div>
+    <%end%>
+  </div>
+</nav>
