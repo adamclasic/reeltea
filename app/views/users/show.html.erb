@@ -1,2 +1,13 @@
 show
-<%= current_user.username %>
+ page current user <%= current_user.username %> </br>
+<% if @user.cover.attachment %>
+    <%= image_tag(@user.cover) %>
+<% else%>
+    <%= image_tag('cover.jpg') %>
+<% end #https://thispersondoesnotexist.com/image%>
+
+<% if @user.image.attachment %>
+    <%= image_tag(@user.image) %>
+<% else%>
+    <%= image_tag('avatar.png') %>
+<% end%>
