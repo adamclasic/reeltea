@@ -1,27 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tweets</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tweets.each do |tweet| %>
-      <tr>
-        <td><%= tweet.content %></td>
-        <td><%= link_to 'Show', tweet %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Tweet', new_tweet_path %>
+
+
+<div class="d-flex">
+    <div class='profile-body d-flex'>
+        <div class='center-cont w-100'>
+
+            <div class="new-post-area p-3 m-3 bg-white rounded">
+                <h5>CREATE A TWEET</h5>
+                <%= render 'form', tweet: @tweet %>
+            </div>
+
+            <div class=' p-3 m-3 bg-white rounded'>
+              <table >
+                  <thead>
+                      <tr>
+                          <th>recent tweets:</th>
+                          <th colspan="3"></th>
+                      </tr>
+                  </thead>
+
+                  <tbody>
+                      <% @sortedtweets.each do |tweet| %>
+                      <tr>
+                          <td><%= tweet.content %></td>
+                          <% if current_user.id == tweet.author.id %>
+                            
+                            <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+                            <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          <% end %>
+                            <td><%= link_to 'Show', tweet %></td>
+                      </tr>
+                      <% end %>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <section class='right-sidebar text-center'>
+            <div class=' py-2'>
+              <h5>Who to follow</h5>
+            </div>
+
+            <div class='followed-by py-2'>
+                <%= render 'whotofollow'%>
+            </div>
+
+
+        </section>
+    </div> 
+
+</div>

@@ -5,6 +5,9 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.all
+    @sortedtweets = @tweets.order('created_at desc')
+    @tweet = Tweet.new
+    @users = User.all
   end
 
   # GET /tweets/1
@@ -71,4 +74,8 @@ class TweetsController < ApplicationController
     def tweet_params
       params.require(:tweet).permit(:content, :image)
     end
+
+    # def following?(user)
+    #   followers.include?(user)
+    # end
 end

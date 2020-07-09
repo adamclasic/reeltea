@@ -4,9 +4,12 @@ class UsersController < ApplicationController
         # @user_tweets = @user.tweets
         # @user_follwers = @user.follwers
         # @user_followings = @user.followings
+        @tweet = Tweet.new
     end
 
     def index
         @all_users = User.all
-    end 
+    end
+
+
 end
