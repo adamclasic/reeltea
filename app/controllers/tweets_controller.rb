@@ -5,6 +5,9 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.all
+    @sortedtweets = @tweets.order('created_at desc')
+    @tweet = Tweet.new
+    @users = User.all
   end
 
   # GET /tweets/1
@@ -24,7 +27,7 @@ class TweetsController < ApplicationController
   # POST /tweets
   # POST /tweets.json
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = current_user.tweets.build(tweet_params)
 
     respond_to do |format|
       if @tweet.save
@@ -69,6 +72,10 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:content)
+      params.require(:tweet).permit(:content, :image)
     end
+
+    # def following?(user)
+    #   followers.include?(user)
+    # end
 end

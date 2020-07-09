@@ -3,7 +3,13 @@
 <p>
   <strong>Content:</strong>
   <%= @tweet.content %>
+  <%= image_tag(@tweet.image, size: "300x300") if @tweet.image.attachment %>
 </p>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<p>
+  <strong>Author:</strong>
+  <%= @tweet.author.username %>
+</p>
+
+<%= link_to 'Edit', edit_tweet_path(@tweet) if current_user == @tweet.author %> |
 <%= link_to 'Back', tweets_path %>
