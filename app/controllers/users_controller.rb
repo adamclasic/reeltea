@@ -11,11 +11,11 @@ class UsersController < ApplicationController
         @all_users = User.all
     end
 
-    def follow
+    def followship
 
-            f = Following.new(follower_id: current_user.id, followed_id: params['id'])
-            f.save
-                redirect_to user_path(params['id'])
+    f = Following.new(follower_id: current_user.id, followed_id: params['id'])
+    f.save
+    redirect_to user_path(params['id'])
     end
 
 end

@@ -1,5 +1,5 @@
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
-/home/adam/.rbenv/versions/2.7.0/bin/ruby -I /home/adam/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200703-3901-lhj0y6.rb extconf.rb
+/home/adam/.rbenv/versions/2.7.0/bin/ruby -I /home/adam/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200709-7750-9n53ss.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -98,4 +98,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20200703-3901-y0xehj
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20200709-7750-zzzwma

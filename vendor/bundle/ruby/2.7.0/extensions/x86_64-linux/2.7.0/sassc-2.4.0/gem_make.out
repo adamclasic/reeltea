@@ -1,5 +1,5 @@
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
-/home/adam/.rbenv/versions/2.7.0/bin/ruby -I /home/adam/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200705-11809-15bm6po.rb extconf.rb
+/home/adam/.rbenv/versions/2.7.0/bin/ruby -I /home/adam/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200709-7750-1jqfvq7.rb extconf.rb
 creating Makefile
 
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
@@ -77,4 +77,4 @@ linking shared-object sassc/libsass.so
 
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.so ./.gem.20200705-11809-1wqxqvv/sassc
+/usr/bin/install -c -m 0755 libsass.so ./.gem.20200709-7750-1vo40fr/sassc
