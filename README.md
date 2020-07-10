@@ -117,7 +117,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👤 Contact
 
-Adam Allalou - [@adamclasic](https://twitter.com/adamclasic) - nyatindopatrick@gmail.com
+Adam Allalou - [@adamclasic](https://twitter.com/adamclasic) - aabou9@gmail.com
 
 Project Link: [https://https://github.com/adamclasic/reeltea](https://https://github.com/adamclasic/reeltea)
 
@@ -130,4 +130,4 @@ Project Link: [https://https://github.com/adamclasic/reeltea](https://https://gi
 - Bootstrap
 - Font Awesome
 
-[product-screenshot]: https://user-images.githubusercontent.com/48393059/86232973-6a8b6000-bb9d-11ea-8cbd-e8db3ca4c3b1.png
+[product-screenshot]: screenshot.png
