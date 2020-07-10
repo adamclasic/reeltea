@@ -34,7 +34,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot]['screenshot.png']]
 
 The project is about a platform for sharing ideas. An authenticated user is allowed to post a vyew (idea) and his/her followers downvote or upvote the idea. The user has to follow other users in order to see their Reeltea.
 
@@ -129,5 +129,3 @@ Project Link: [https://https://github.com/adamclasic/reeltea](https://https://gi
 - Heroku
 - Bootstrap
 - Font Awesome
-
-[product-screenshot]: screenshot.png
