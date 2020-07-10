@@ -18,4 +18,11 @@ class UsersController < ApplicationController
     redirect_to user_path(params['id'])
     end
 
+    def unfollowship
+
+        f = Following.find_by(follower_id: current_user.id, followed_id: params['id'])
+        f.delete
+        redirect_to user_path(params['id'])
+    end
+
 end

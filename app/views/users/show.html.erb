@@ -106,8 +106,22 @@
                     <% else%>
                     <%= image_tag('avatar.png', size: '90x90', class: 'rounded-circle') %>
                     <% end%>
+                    <% if current_user.id != @user.id%>
+                        <% if current_user.followeds.include?(@user) %>
+                            <div class='follow-btn f-profile'>
+                                <%= link_to("/follow/#{(@user.id)}", method: :delete) do%>
+                                <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '20x20'  %>
+                                <%end%>
+                            </div>
+                        <%else %>
+                            <div class='follow-btn f-profile'>
+                                <%= link_to("/follow/#{(@user.id)}", method: :get) do%>
+                                <%= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '20x20' %>
+                                <%end%>
+                            </div>
+                        <%end%>
+                    <%end%>
                 </div>
-                
             </div>
             <div class='centered user-name py-2'>
                 <h4 class='upcase'><%= @user.name%></h4>
