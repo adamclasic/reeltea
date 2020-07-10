@@ -8,6 +8,7 @@
     "ignoreFiles": [
       "build/**",
       "dist/**",
+      "vendor/**",
       "**/reset*.css",
       "**/bootstrap*.css"
     ]
