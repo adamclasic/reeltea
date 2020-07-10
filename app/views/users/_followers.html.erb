@@ -22,7 +22,7 @@
                 </div>
             </div>
         <%end%>
-        <%# if @user == current_user %>
+        <% if f != current_user %>
         <% if current_user.followeds.include?(f) %>
         <div class='follow-btn f-profile'>
             <%= link_to("/follow/#{(f.id)}", method: :delete) do%>
@@ -36,7 +36,7 @@
             <%end%>
         </div>
         <%end%>
-        <%#end%>
+        <%end%>
     </div>
 
 <%end%>

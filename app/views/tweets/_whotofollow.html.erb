@@ -1,41 +1,43 @@
 
 <% @users.each do |f|%>
-    <% if !current_user.followeds.include?(f) %>
-    <div class='position-relative d-flex'>
-        <%= link_to user_path(f) do%>
-        <div class='d-flex'>
-            <div class='user-avatar-section'>
+    <% if current_user.id != f.id %>
+        <% if !current_user.followeds.include?(f) %>
+            <div class='position-relative d-flex'>
+                <%= link_to user_path(f) do%>
+                <div class='d-flex'>
+                    <div class='user-avatar-section'>
 
-                <div class='avatar'>
-                    <% if f.image.attachment %>
-                    <%= image_tag(f.image, size: '90x90', class: 'rounded-circle') %>
-                    <% else%>
-                    <%= image_tag('avatar.png', size: '90x90', class: 'rounded-circle') %>
-                    <% end%>
+                        <div class='avatar'>
+                            <% if f.image.attachment %>
+                            <%= image_tag(f.image, size: '90x90', class: 'rounded-circle') %>
+                            <% else%>
+                            <%= image_tag('avatar.png', size: '90x90', class: 'rounded-circle') %>
+                            <% end%>
+                        </div>
+
+                    </div>
+                    <div class='px-3 follow-text'>
+                        <p><%= f.name%></p>
+                        <h5 class='f-hashtag'>@<%= f.username%></h5>
+                    </div>
                 </div>
+                <%end%>
 
+                <% if current_user.followeds.include?(f) %>
+                <div class='follow-btn f-profile'>
+                    <%= link_to("/follow/#{(f.id)}", method: :delete) do%>
+                    <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'  %>
+                    <%end%>
+                </div>
+                <%else %>
+                <div class='follow-btn f-profile'>
+                    <%= link_to("/follow/#{(f.id)}", method: :get) do%>
+                    <%= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '40x40' %>
+                    <%end%>
+                </div>
+                <%end%>
             </div>
-            <div class='px-3 follow-text'>
-                <p><%= f.name%></p>
-                <h5 class='f-hashtag'>@<%= f.username%></h5>
-            </div>
-        </div>
+        
         <%end%>
-
-        <% if current_user.followeds.include?(f) %>
-        <div class='follow-btn f-profile'>
-            <%= link_to("/follow/#{(f.id)}", method: :delete) do%>
-            <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'  %>
-            <%end%>
-        </div>
-        <%else %>
-        <div class='follow-btn f-profile'>
-            <%= link_to("/follow/#{(f.id)}", method: :get) do%>
-            <%= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '40x40' %>
-            <%end%>
-        </div>
-        <%end%>
-  </div>
-    
-<%end%>
+    <%end%>
 <%end%>
