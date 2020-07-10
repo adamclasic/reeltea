@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'tweets#index'
   devise_for :users
 
   resources :tweets
-  resources :users, only: [:show, :index]
+  resources :users, only: %i[show index]
   get 'follow/:id', to: 'users#followship'
   delete 'follow/:id', to: 'users#unfollowship'
 
