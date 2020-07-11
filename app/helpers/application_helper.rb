@@ -1,10 +1,10 @@
 module ApplicationHelper
 
   def following?(user)
-    current_user.followeds.include?(user)
+    user.followers.include?(current_user)
   end
 
-  def same_user?(user)
+  def current_user?(user)
     current_user == user
   end
 
