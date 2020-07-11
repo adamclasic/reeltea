@@ -1,13 +1,23 @@
 class FollowingsController < ApplicationController
-def create
+    def create
         f = Following.new(follower_id: current_user.id, followed_id: params['id'])
-        f.save
-        redirect_to user_path(params['id'])
+        if f.save
+            set_flash_message! :notice, :followed
+            redirect_to user_path(params['id'])
+        else
+            flash[:error] = @f.errors.full_messages
+        end
     end
 
-    def distroy
+    def destroy
         f = Following.find_by(follower_id: current_user.id, followed_id: params['id'])
-        f.delete
-        redirect_to user_path(params['id'])
+        if f.delete
+            set_flash_message! :notice, :unfollowed
+            redirect_to user_path(params['id'])
+        else
+            flash[:error] = @f.errors.full_messages
+        end
+
+
     end
 end
