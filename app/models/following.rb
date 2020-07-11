@@ -3,4 +3,6 @@ class Following < ApplicationRecord
   belongs_to :following, class_name: 'User', foreign_key: 'followed_id'
 
   validates_uniqueness_of :followed_id, scope: :followed_id
+
+
 end

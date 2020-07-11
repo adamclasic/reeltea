@@ -23,19 +23,19 @@
             </div>
         <%end%>
         <% if f != current_user %>
-        <% if current_user.followeds.include?(f) %>
-        <div class='follow-btn f-profile'>
-            <%= link_to("/follow/#{(f.id)}", method: :delete) do%>
-            <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'  %>
+            <% if current_user.followeds.include?(f) %>
+            <div class='follow-btn f-profile'>
+                <%= link_to("/follow/#{(f.id)}", method: :delete) do%>
+                <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'  %>
+                <%end%>
+            </div>
+            <%else %>
+            <div class='follow-btn f-profile'>
+                <%= link_to("/follow/#{(f.id)}", method: :get) do%>
+                <%= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '40x40' %>
+                <%end%>
+            </div>
             <%end%>
-        </div>
-        <%else %>
-        <div class='follow-btn f-profile'>
-            <%= link_to("/follow/#{(f.id)}", method: :get) do%>
-            <%= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '40x40' %>
-            <%end%>
-        </div>
-        <%end%>
         <%end%>
     </div>
 

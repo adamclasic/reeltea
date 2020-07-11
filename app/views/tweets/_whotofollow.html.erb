@@ -1,9 +1,9 @@
 
 <% @users.each do |f|%>
-    <% if current_user.id != f.id %>
-        <% if !current_user.followeds.include?(f) %>
+    <% if !same_user?(f) %>
+        <% if !following?(f) %>
             <div class='position-relative d-flex'>
-                <%= link_to user_path(f) do%>
+                <%= link_to user_path(f.class) do%>
                 <div class='d-flex'>
                     <div class='user-avatar-section'>
 
