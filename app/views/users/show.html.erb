@@ -109,13 +109,13 @@
                     <% if current_user.id != @user.id%>
                         <% if current_user.followeds.include?(@user) %>
                             <div class='follow-btn f-profile'>
-                                <%= link_to("/follow/#{(@user.id)}", method: :delete) do%>
+                                <%= link_to(following_path(id: @user.id), method: :delete) do%>
                                 <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '20x20'  %>
                                 <%end%>
                             </div>
                         <%else %>
                             <div class='follow-btn f-profile'>
-                                <%= link_to("/follow/#{(@user.id)}", method: :get) do%>
+                                <%= link_to(followings_path(id: @user.id), method: :post) do%>
                                 <%= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '20x20' %>
                                 <%end%>
                             </div>
