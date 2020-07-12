@@ -23,7 +23,7 @@
                 </div>
                 <%end%>
 
-                <% if current_user.followeds.include?(f) %>
+                <% if following?(f) %>
                     <div class='follow-btn f-profile'>
                         <%= link_to(following_path(id: f.id), method: :delete) do%>
                         <%= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'  %>
