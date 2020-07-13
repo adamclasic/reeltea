@@ -4,10 +4,10 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.includes(:author).includes(image_attachment: :blob).includes(:image_attachment).all
     @sortedtweets = @tweets.order('created_at desc')
     @tweet = Tweet.new
-    @users = User.all
+    @users = User.includes(:followeds).includes(:followers).includes(image_attachment: :blob).includes(:image_attachment).includes(:cover_attachment).all
   end
 
   # GET /tweets/1
