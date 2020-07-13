@@ -45,14 +45,6 @@
 
 
 
-
-
-
-
-
-
-
-
                         </div>
                         <div class=' p-3 m-3 bg-white rounded'>
                         <h5 class='upcase'>TWEETS BY <%=@user.name%></h5>
@@ -65,14 +57,14 @@
                 </div>
                 <div class="tab-pane fade followers-tab" id="nav-profile" role="tabpanel" aria- labelledby="nav-profile-tab">
                     <% if !@user_followers.empty? %>
-                    <%= render 'users/followers' %>
-                <% else %>
-                    <div class='position-relative'>
-                        <div class='d-flex'>
-                            this user hasn't followers yet.
+                        <%= render 'users/followers' %>
+                    <% else %>
+                        <div class='position-relative'>
+                            <div class='d-flex'>
+                                this user hasn't followers yet.
+                            </div>
                         </div>
-                    </div>
-                <% end %>
+                    <% end %>
                 </div>
                 <div class="tab-pane fade followers-tab" id="nav-contact" role="tabpanel" aria- labelledby="nav-contact-tab">
                 <% if !@user_followeds.empty? %>
