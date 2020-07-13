@@ -9,7 +9,7 @@
   <p align="center">
     Idea sharing app.
     <br /><br/>
-    <a href="https://reeltea.herokuapp.com"><strong>VIEW DEMO »</strong></a>
+    <a href="https://intense-temple-98550.herokuapp.com/"><strong>VIEW DEMO »</strong></a>
     <br />
     <br />
    
@@ -34,7 +34,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot]['screenshot.png']]
+[![Product Name Screen Shot]['assets/images/screenshot.png']]
 
 The project is about a platform for sharing ideas. An authenticated user is allowed to post a vyew (idea) and his/her followers downvote or upvote the idea. The user has to follow other users in order to see their Reeltea.
 
