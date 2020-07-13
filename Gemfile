@@ -38,11 +38,10 @@ gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
-  gem 'capybara', '>= 2.15'
-
 end
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'

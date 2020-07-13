@@ -11,5 +11,4 @@ RSpec.describe Tweet, type: :model do
     end
     it { should validate_presence_of(:content) }
   end
-
 end
