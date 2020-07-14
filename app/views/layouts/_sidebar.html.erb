@@ -12,7 +12,7 @@
         <h5 class='px-1 mx-auto my-auto'><%= current_user.name.split.map(&:capitalize).join(' ')%></h5>
     </div>
     <div class='follow-counter w-100'>
-        <div class='d-flex w-100'>
+        <div class='d-flex w-100 my-2'>
             <div class='p-1 w-50 text-center'>
                 <p class="text-white h4 mb-0"><%=current_user.followeds.size%></p>
                 <p class="h6">Following</p>
