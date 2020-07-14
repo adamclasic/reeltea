@@ -14,6 +14,13 @@
  */
 @import "bootstrap";
 
+$dark-blue: #213245;
+$light-blue: #5294e2;
+
+a:hover {
+  text-decoration: none;
+}
+
 .main {
   width: 82%;
   margin-left: 18%;
@@ -21,7 +28,7 @@
 
 .sidebar {
   width: 18%;
-  background-color: #213245;
+  background-color: $dark-blue;
 }
 
 .right-sidebar {
@@ -33,5 +40,15 @@
 }
 
 .bg-cinfo {
-  background-color: #5294e2;
+  background-color: $light-blue;
+}
+
+.leftbar-active {
+  background-color: $light-blue;
+  color: white!important;
+}
+
+.disabled {
+  color: rgb(83, 83, 83);
+  cursor: pointer;
 }
