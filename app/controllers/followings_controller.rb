@@ -5,7 +5,8 @@ class FollowingsController < ApplicationController
       flash[:notice] = 'followed succesful'
       redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = f.errors.full_messages.join(', ')
+      flash[:notice] = f.errors.full_messages.join(', ')
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -15,7 +16,7 @@ class FollowingsController < ApplicationController
       flash[:notice] = 'unfollwed succesful'
       redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = f.errors.full_messages.join(', ')
+      flash[:notice] = f.errors.full_messages.join(', ')
     end
   end
 end

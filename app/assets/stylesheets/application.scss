@@ -14,7 +14,10 @@
  */
 @import "bootstrap";
 
+$original-blue: #588fe5;
 $dark-blue: #213245;
+$light-dark-blue: #3d609f;
+$light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
 
 a:hover {
@@ -37,10 +40,11 @@ a:hover {
 
 .profile-body {
   width: 100%;
+  // margin-left: 259px;
 }
 
 .bg-cinfo {
-  background-color: $light-blue;
+  background-color: $original-blue;
 }
 
 .leftbar-active {
@@ -51,4 +55,12 @@ a:hover {
 .disabled {
   color: rgb(83, 83, 83);
   cursor: pointer;
+}
+
+.text-bluedark {
+  color: $light-dark-blue!important;
+}
+
+.text-bluedark:hover {
+  color: rgba(234, 234, 234, 0.5)!important;
 }
