@@ -2,10 +2,10 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[show edit update destroy]
 
   def index
-    @tweets = Tweet.includes(:author).includes(image_attachment: :blob).includes(:image_attachment).all
+    @tweets = Tweet.includes([:author]).all
     @sortedtweets = @tweets.order('created_at desc')
     @tweet = Tweet.new
-    @users = User.includes(:followeds).includes(:followers).includes(image_attachment: :blob).includes(:image_attachment).includes(:cover_attachment).all
+    @users = User.includes(image_attachment: [:blob]).includes(:followers)
   end
 
   def show; end

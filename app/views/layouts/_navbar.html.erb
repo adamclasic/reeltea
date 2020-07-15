@@ -25,7 +25,8 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
             <%= link_to  "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
             <%= link_to  "#{current_user.username}", user_path(current_user), method: :delete, class: 'dropdown-item' %>
-            <a href="#" class="text-muted dropdown-item">edit your profile</a>
+            <%= link_to  "edit your profile", edit_user_registration_path, method: :get, class: 'dropdown-item' %>
+
         </div>
       </li>
     </ul>
