@@ -14,6 +14,16 @@
  */
 @import "bootstrap";
 
+$original-blue: #588fe5;
+$dark-blue: #213245;
+$light-dark-blue: #3d609f;
+$light-dark-blue-opacity: #3d5f9f80;
+$light-blue: #5294e2;
+
+a:hover {
+  text-decoration: none;
+}
+
 .main {
   width: 82%;
   margin-left: 18%;
@@ -21,7 +31,7 @@
 
 .sidebar {
   width: 18%;
-  background-color: #213245;
+  background-color: $dark-blue;
 }
 
 .right-sidebar {
@@ -30,8 +40,27 @@
 
 .profile-body {
   width: 100%;
+  // margin-left: 259px;
 }
 
 .bg-cinfo {
-  background-color: #5294e2;
+  background-color: $original-blue;
+}
+
+.leftbar-active {
+  background-color: $light-blue;
+  color: white!important;
+}
+
+.disabled {
+  color: rgb(83, 83, 83);
+  cursor: pointer;
+}
+
+.text-bluedark {
+  color: $light-dark-blue!important;
+}
+
+.text-bluedark:hover {
+  color: rgba(234, 234, 234, 0.5)!important;
 }

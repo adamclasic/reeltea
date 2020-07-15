@@ -1,9 +1,18 @@
 require 'rails_helper'
+require_relative '../suport/signin'
+require_relative '../suport/tweet'
 
-RSpec.feature 'Tweets', type: :feature do
-  it 'Create a new tweet' do
-    fill_in 'content', with: 'Its a new tweet. cheers!'
-    click_on 'submit'
-    expect(page).to have_content('Its a new tweet. cheers!')
+feature 'Create tweet' do
+  let(:user) { User.new(name: 'adam allalou', username: 'pato', email: 'pato@gmail.com', password: 'adamadam', password_confirmation: 'adamadam') }
+  let(:registration) { Register.new }
+  let(:vyew) { Vyew.new }
+
+  before(:each) do
+    registration.visit_page('/users/sign_up').sign_up(user)
+  end
+
+  scenario 'Post a new tweet' do
+    vyew.visit_page('/').tweet('This is a very nice idea')
+    expect(page).to have_content 'nice'
   end
 end

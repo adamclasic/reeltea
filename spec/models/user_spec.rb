@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:followers).through(:followers_ids).source(:follower) }
 
     it { should have_many(:followeds_ids).with_foreign_key('follower_id').class_name('Following') }
-    it { should have_many(:followeds).through(:followers_ids).source(:following) }
+    it { should have_many(:followeds).through(:followeds_ids).source(:following) }
   end
 
   describe 'validations' do

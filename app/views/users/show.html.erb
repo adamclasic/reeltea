@@ -7,7 +7,7 @@
                 <%= image_tag(@user.cover, class: 'w-100') %>
                 <% else%>
                 <%= image_tag('cover.jpg', class: 'w-100') %>
-                <% end #https://thispersondoesnotexist.com/image%>
+                <% end%>
             </div>
             <nav class='my-2 border-bottom '>
                 <div class="nav profile-tab d-flex" id="nav-tab" role="tablist">
@@ -21,29 +21,15 @@
                     <div class='hashtag'>
                         <div class='new-post-area p-3 m-3 bg-white rounded'>
                         <h5 class='upcase'>Mention <%=@user.name%></h5>
-                            
-                            
-
-
-
-
-
                         <%= form_with(model: @tweet, local: true) do |form| %>
-                        
-
-                        <div class="field">
-                            <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
-                            <%= form.submit %>
-                        </div>
-
-                        <div class="field">
-                            <%= form.file_field :image %>
-                        </div>
-
+                            <div class="field">
+                                <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
+                                <%= form.submit %>
+                            </div>
+                            <div class="field">
+                                <%= form.file_field :image %>
+                            </div>
                         <% end %>
-
-
-
 
                         </div>
                         <div class=' p-3 m-3 bg-white rounded'>
@@ -57,7 +43,7 @@
                 </div>
                 <div class="tab-pane fade followers-tab" id="nav-profile" role="tabpanel" aria- labelledby="nav-profile-tab">
                     <% if !@user_followers.empty? %>
-                        <%= render 'users/followers' %>
+                        <%= render 'users/follows', list:  @user_followers %>
                     <% else %>
                         <div class='position-relative'>
                             <div class='d-flex'>
@@ -68,7 +54,7 @@
                 </div>
                 <div class="tab-pane fade followers-tab" id="nav-contact" role="tabpanel" aria- labelledby="nav-contact-tab">
                 <% if !@user_followeds.empty? %>
-                    <%= render 'users/followeds' %>
+                    <%= render 'users/follows', list:  @user_followeds %>
                 <% else %>
                     <div class='position-relative'>
                         <div class='d-flex'>
@@ -80,18 +66,8 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
         <section class='right-sidebar text-center'>
             <div class='user-avatar-section d-flex py-2'>
-                <%#= render 'users/follow_profile', user: @user %>
-
                 <div class='avatar big-avatar d-inline-block m-auto'>
                     <% if @user.image.attachment %>
                     <%= image_tag(@user.image, size: '90x90', class: 'rounded-circle') %>
