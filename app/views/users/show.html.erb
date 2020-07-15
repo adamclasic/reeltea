@@ -21,29 +21,15 @@
                     <div class='hashtag'>
                         <div class='new-post-area p-3 m-3 bg-white rounded'>
                         <h5 class='upcase'>Mention <%=@user.name%></h5>
-                            
-                            
-
-
-
-
-
                         <%= form_with(model: @tweet, local: true) do |form| %>
-                        
-
-                        <div class="field">
-                            <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
-                            <%= form.submit %>
-                        </div>
-
-                        <div class="field">
-                            <%= form.file_field :image %>
-                        </div>
-
+                            <div class="field">
+                                <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
+                                <%= form.submit %>
+                            </div>
+                            <div class="field">
+                                <%= form.file_field :image %>
+                            </div>
                         <% end %>
-
-
-
 
                         </div>
                         <div class=' p-3 m-3 bg-white rounded'>
@@ -80,18 +66,8 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
         <section class='right-sidebar text-center'>
             <div class='user-avatar-section d-flex py-2'>
-                <%#= render 'users/follow_profile', user: @user %>
-
                 <div class='avatar big-avatar d-inline-block m-auto'>
                     <% if @user.image.attachment %>
                     <%= image_tag(@user.image, size: '90x90', class: 'rounded-circle') %>
