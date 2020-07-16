@@ -53,7 +53,7 @@ a:hover {
 
 .leftbar-active {
   background-color: $light-blue;
-  color: white!important;
+  color: white !important;
 }
 
 .disabled {
@@ -62,20 +62,16 @@ a:hover {
 }
 
 .text-bluedark {
-  color: $light-dark-blue!important;
+  color: $light-dark-blue !important;
 }
 
 .text-bluedark:hover {
-  color: rgba(234, 234, 234, 0.5)!important;
+  color: rgba(234, 234, 234, 0.5) !important;
 }
 
 .text-light-grey {
   color: rgb(165, 165, 165);
 }
-
-
-
-
 
 *,
 *:after,
@@ -134,8 +130,7 @@ label {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  margin-bottom: 0!important;
-
+  margin-bottom: 0 !important;
 }
 
 #tab1:checked ~ #content1,
@@ -168,7 +163,7 @@ label {
 
 label .fa {
   font-size: 1.3em;
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 /*Media query*/
@@ -209,12 +204,12 @@ label .fa {
 /*Content Animation*/
 @keyframes fadeInScale {
   0% {
-  	transform: scale(0.9);
-  	opacity: 0;
+    transform: scale(0.9);
+    opacity: 0;
   }
   
   100% {
-  	transform: scale(1);
-  	opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
 }
