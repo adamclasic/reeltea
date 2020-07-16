@@ -38,6 +38,8 @@ Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
   Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
   # Enabled: false
