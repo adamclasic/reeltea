@@ -32,7 +32,19 @@
                       </tr>
                       <% end %>
                   </tbody>
+
+                  <tbody>
+                  x
+                      <% @users_can_follow.each do |user|%>
+                      <tr>
+                          <%=user['username']%>
+                      </tr>
+                      
+                      <% end %>
+                  </tbody>
               </table>
+
+
             </div>
         </div>
  

@@ -5,7 +5,12 @@ class TweetsController < ApplicationController
     @tweets = Tweet.includes([:author]).all
     @sortedtweets = @tweets.order('created_at desc')
     @tweet = Tweet.new
+    # @users = User.includes(image_attachment: [:blob]).includes([:followers_ids])
     @users = User.includes(image_attachment: [:blob]).includes(:followers)
+
+
+    sql = "SELECT users.username FROM users JOIN followings ON users.id=followed_id WHERE NOT follower_id = 1 "
+    @users_can_follow = ActiveRecord::Base.connection.execute(sql)
   end
 
   def show; end
