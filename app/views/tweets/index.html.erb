@@ -1,65 +1,68 @@
+<div class="tab_container">
+    <input class="custom-hide " id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1"><span class="">TWEETS</span></label>
+
+    <input class="custom-hide " id="tab2" type="radio" name="tabs">
+    <label for="tab2"><span class="">PHOTOS</span></label>
+
+    <input class="custom-hide " id="tab3" type="radio" name="tabs">
+    <label for="tab3"><span class="">VIDEOS</span></label>
+
+    <section id="content1" class="tab-content custom-hide">
+        <div class="d-flex">
+            <div class='profile-body d-flex'>
+                <div class='center-cont w-100'>
+
+                    <div class="new-post-area p-4 m-3 bg-white rounded">
+                        <h5 class="text-light-grey h6 font-weight-bold">TWEET SOMETHING</h5>
+                        <%= render 'form', tweet: @tweet %>
+                    </div>
+
+                    <div class=' p-3 m-3 bg-white rounded'>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>recent tweets:</th>
+                                    <th colspan="3"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% @sortedtweets.each do |tweet| %>
+                                <tr>
+                                    <td><%= tweet.content %></td>
+                                    <% if current_user.id == tweet.author.id %>
+
+                                    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+                                    <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                    <% end %>
+                                    <td><%= link_to 'Show', tweet %></td>
+                                </tr>
+                                <% end %>
+                            </tbody>
+
+                        </table>
 
 
+                    </div>
+                </div>
+    </section>
+    <section id="content2" class="tab-content custom-hide">
+        <h2>comming soon!</h2>
+    </section>
+    <section id="content3" class="tab-content custom-hide">
+        <h2>comming soon!</h2>
+    </section>
 
-<div class="d-flex">
-    <div class='profile-body d-flex'>
-        <div class='center-cont w-100'>
+<section class='right-sidebar text-center position-absolute'>
+    <div class=' py-2'>
+        <h5>Who to follow</h5>
+    </div>
 
-            <div class="new-post-area p-3 m-3 bg-white rounded">
-                <h5>CREATE A TWEET</h5>
-                <%= render 'form', tweet: @tweet %>
-            </div>
-
-            <div class=' p-3 m-3 bg-white rounded'>
-              <table >
-                  <thead>
-                      <tr>
-                          <th>recent tweets:</th>
-                          <th colspan="3"></th>
-                      </tr>
-                  </thead>
-
-                  <tbody>
-                      <% @sortedtweets.each do |tweet| %>
-                      <tr>
-                          <td><%= tweet.content %></td>
-                          <% if current_user.id == tweet.author.id %>
-                            
-                            <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-                            <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                          <% end %>
-                            <td><%= link_to 'Show', tweet %></td>
-                      </tr>
-                      <% end %>
-                  </tbody>
-
-                  <tbody>
-                  x
-                      <% @users_can_follow.each do |user|%>
-                      <tr>
-                          <%=user['username']%>
-                      </tr>
-                      
-                      <% end %>
-                  </tbody>
-              </table>
-
-
-            </div>
-        </div>
- 
-
-        <section class='right-sidebar text-center'>
-            <div class=' py-2'>
-              <h5>Who to follow</h5>
-            </div>
-
-            <div class='followed-by py-2'>
-                <%= render 'whotofollow'%>
-            </div>
-
-
-        </section>
-    </div> 
-
+    <div class='followed-by py-2'>
+        <%= render 'whotofollow'%>
+    </div>
+</section>
 </div>
+
+</div></div>

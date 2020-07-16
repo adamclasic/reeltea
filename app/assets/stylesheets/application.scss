@@ -13,6 +13,7 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  */
 @import "bootstrap";
+@import "my_styles";
 
 $original-blue: #588fe5;
 $dark-blue: #213245;
@@ -35,7 +36,10 @@ a:hover {
 }
 
 .right-sidebar {
-  width: 30%;
+  width: 330px;
+  float: right;
+  right: 0;
+  top: 0;
 }
 
 .profile-body {
@@ -63,4 +67,154 @@ a:hover {
 
 .text-bluedark:hover {
   color: rgba(234, 234, 234, 0.5)!important;
+}
+
+.text-light-grey {
+  color: rgb(165, 165, 165);
+}
+
+
+
+
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: sans-serif;
+	background: #f6f9fa;
+}
+
+h1 {
+	color: #ccc;
+	text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+	// width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.custom-hide {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  float: left;
+  padding: 1em 1.5em;
+  color: #a3a3a3;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0!important;
+
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+  border-top: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  box-shadow: inset 0 -3px $original-blue;
+  color: rgb(32, 32, 32);
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: $original-blue;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin-bottom: 0!important;
+}
+
+/*Media query*/
+@media only screen and (max-width: 930px) {
+  label span {
+    font-size: 14px;
+  }
+  label .fa {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  label span {
+    display: none;
+  }
+
+  label .fa {
+    font-size: 16px;
+  }
+
+  .tab_container {
+    width: 98%;
+  }
+}
+
+.my-button {
+  background-color: inherit;
+  border: 0;
+}
+.c-input {
+  display: none;
+}
+.c-input:hover {
+  display: unset;
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
 }
