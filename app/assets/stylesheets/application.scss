@@ -13,15 +13,12 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  */
 @import "bootstrap";
-@import "my_styles";
 
 $original-blue: #588fe5;
 $dark-blue: #213245;
 $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
-
-
 
 .main {
   width: 82%;
@@ -79,8 +76,8 @@ $light-blue: #5294e2;
   box-sizing: border-box;
 }
 
-.clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
   content: " ";
   display: table;
 }
@@ -144,10 +141,11 @@ label {
 
 .tab_container .tab-content p,
 .tab_container .tab-content h3 {
-  -webkit-animation: fadeInScale 0.7s ease-in-out;
-  -moz-animation: fadeInScale 0.7s ease-in-out;
-  animation: fadeInScale 0.7s ease-in-out;
+  -webkit-animation: fadeinscale 0.7s ease-in-out;
+  -moz-animation: fadeinscale 0.7s ease-in-out;
+  animation: fadeinscale 0.7s ease-in-out;
 }
+
 .tab_container .tab-content h3  {
   text-align: center;
 }
@@ -171,6 +169,7 @@ label .fa {
   label span {
     font-size: 14px;
   }
+  
   label .fa {
     font-size: 14px;
   }
@@ -194,15 +193,16 @@ label .fa {
   background-color: inherit;
   border: 0;
 }
+
 .c-input {
   display: none;
 }
+
 .c-input:hover {
   display: unset;
 }
 
-/*Content Animation*/
-@keyframes fadeInScale {
+@keyframes fadeinscale {
   0% {
     transform: scale(0.9);
     opacity: 0;
