@@ -26,7 +26,7 @@
     <div class='side-links '>
 
         <%= link_to tweets_path do %>
-        <div class='d-flex p-3 text-secondary leftbar-<%= is_avtive?(tweets_path) %>'>
+        <div class='d-flex p-3 text-secondary leftbar-<%= active?(tweets_path) %>'>
             <i class='fas fa-home pr-2'></i>
             <span>HOME</span>
         </div>
@@ -38,7 +38,7 @@
         </div>
 
         <%= link_to user_path(current_user) do %>
-        <div class='d-flex p-3 text-secondary leftbar-<%= is_avtive?(user_path(current_user))  %>'>
+        <div class='d-flex p-3 text-secondary leftbar-<%= active?(user_path(current_user))  %>'>
             <i class='fas fa-user pr-2'></i>
             <span>PROFILE</span>
         </div>

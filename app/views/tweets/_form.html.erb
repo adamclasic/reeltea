@@ -12,14 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.text_field :content %>
+    <%= form.text_field :content, class: 'w-50'  %>
+    <%= button_tag type: 'submit', class: "button my-button", id: "register-button" do %>
+        <i class="fa fa-share" aria-hidden="true"></i>
+    <% end %>
   </div>
+  <div class="actions ">
+    <%= form.file_field :image, class: ''%>
 
-  <div class="field">
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>

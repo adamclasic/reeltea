@@ -37,12 +37,11 @@ gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'bullet'
   gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
-  gem "bullet"
-
 end
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
@@ -62,7 +61,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'shoulda-matchers' 
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
