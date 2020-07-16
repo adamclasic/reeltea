@@ -21,9 +21,7 @@ $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
 
-a:hover {
-  text-decoration: none;
-}
+
 
 .main {
   width: 82%;
@@ -74,31 +72,31 @@ a:hover {
 }
 
 *,
-*:after,
-*:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .clearfix:before,
 .clearfix:after {
-	content: " ";
-	display: table;
+  content: " ";
+  display: table;
 }
 
-.clearfix:after {
-	clear: both;
+.clearfix::after {
+  clear: both;
 }
 
 body {
-	font-family: sans-serif;
-	background: #f6f9fa;
+  font-family: sans-serif;
+  background: #f6f9fa;
 }
 
 h1 {
-	color: #ccc;
-	text-align: center;
+  color: #ccc;
+  text-align: center;
 }
 
 a {
@@ -107,11 +105,13 @@ a {
   outline: none;
 }
 
-/*Fun begins*/
+a:hover {
+  text-decoration: none;
+}
+
 .tab_container {
-	// width: 100%;
-	margin: 0 auto;
-	position: relative;
+  margin: 0 auto;
+  position: relative;
 }
 
 .custom-hide {
