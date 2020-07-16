@@ -146,8 +146,13 @@ label {
   animation: fadeinscale 0.7s ease-in-out;
 }
 
-.tab_container .tab-content h3  {
+.tab_container .tab-content h3 {
   text-align: center;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin-bottom: 0 !important;
 }
 
 .tab_container [id^="tab"]:checked + label {
@@ -159,17 +164,11 @@ label {
   color: $original-blue;
 }
 
-label .fa {
-  font-size: 1.3em;
-  margin-bottom: 0 !important;
-}
-
-/*Media query*/
 @media only screen and (max-width: 930px) {
   label span {
     font-size: 14px;
   }
-  
+
   label .fa {
     font-size: 14px;
   }
@@ -207,7 +206,7 @@ label .fa {
     transform: scale(0.9);
     opacity: 0;
   }
-  
+
   100% {
     transform: scale(1);
     opacity: 1;
