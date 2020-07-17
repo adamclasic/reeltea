@@ -6,13 +6,15 @@
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/5e0cee5c01.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'custom' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'favi32.png' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   </head>
 
   <body class="bg-light">
-    <div class='.main-cont'>
+    <div class='wrapper'>
       <% if notice.present? %>
         <div class="notice">
           <p> <%= notice %> </p>
@@ -35,18 +37,19 @@
       <%end%>
 
       <%if user_signed_in?%>
-
-        <%= render 'layouts/sidebar' %>
-
+        <nav id="sidebar" class='sidebar  text-secondary'>
+          <%= render 'layouts/sidebar' %>
+        </nav>
       <%end%>
 
       <%if user_signed_in? %>
-        <div class='main '>
+        <div class='content' id="content">
           <%= render 'layouts/navbar' %>
           <%= yield %>
         </div>
       <%end%>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
   </body>
 </html>
