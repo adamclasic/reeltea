@@ -17,9 +17,9 @@ module ApplicationHelper
 
   def print_image(user)
     if user.image.attachment
-      image_tag(user.image, size: '90x90', class: 'rounded-circle')
+      image_tag(user.image, size: '55x55', class: 'rounded-circle')
     else
-      image_tag('avatar.png', size: '90x90', class: 'rounded-circle')
+      image_tag('avatar.png', size: '55x55', class: 'rounded-circle')
     end
   end
 

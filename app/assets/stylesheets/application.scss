@@ -20,13 +20,19 @@ $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
 $bg-grey: rgb(246, 249, 250);
+
+.main-cont {
+  max-width: 1425px;
+  margin: auto;
+}
+
 .main {
   width: 82%;
   margin-left: 18%;
 }
 
 .sidebar {
-  width: 18%;
+  width: 256.5px;
   background-color: $dark-blue;
 }
 
@@ -35,8 +41,12 @@ $bg-grey: rgb(246, 249, 250);
   width: 330px;
   float: right;
   right: 0;
-  top: 0;
+  top: 58px;
   background-color: $bg-grey;
+}
+
+.right-sidebar > h5 {
+  color: #a3a3a3;
 }
 
 .card-text {
@@ -66,7 +76,10 @@ $bg-grey: rgb(246, 249, 250);
 
 .profile-body {
   width: 100%;
-  // margin-left: 259px;
+}
+
+.center-cont {
+  width: 837px;
 }
 
 .bg-cinfo {
@@ -140,7 +153,6 @@ a:hover {
 
 .custom-hide {
   clear: both;
-  padding-top: 10px;
   display: none;
 }
 
@@ -167,6 +179,7 @@ label {
 }
 
 .tab_container .tab-content p,
+.tab_container .tab-content .user-card,
 .tab_container .tab-content h3 {
   -webkit-animation: fadeinscale 0.7s ease-in-out;
   -moz-animation: fadeinscale 0.7s ease-in-out;
