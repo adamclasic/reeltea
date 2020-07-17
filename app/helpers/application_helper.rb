@@ -72,4 +72,5 @@ module ApplicationHelper
     end
       content_tag :td do link_to 'Show', tweet end
   end
+
 end
