@@ -19,6 +19,12 @@ $dark-blue: #213245;
 $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
+$bg-grey: rgb(246, 249, 250);
+
+.main-cont {
+  max-width: 1425px;
+  margin: auto;
+}
 
 .main {
   width: 82%;
@@ -26,20 +32,54 @@ $light-blue: #5294e2;
 }
 
 .sidebar {
-  width: 18%;
+  width: 256.5px;
   background-color: $dark-blue;
 }
 
 .right-sidebar {
+  min-height: 90vh;
   width: 330px;
   float: right;
   right: 0;
-  top: 0;
+  top: 58px;
+  background-color: $bg-grey;
+}
+
+.right-sidebar > h5 {
+  color: #a3a3a3;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text > h6 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.card-text > h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.card-text > h5:hover {
+  color: rgb(138, 138, 138);
+}
+
+.tweets-header {
+  color: $original-blue;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .profile-body {
   width: 100%;
-  // margin-left: 259px;
+}
+
+.center-cont {
+  width: 837px;
 }
 
 .bg-cinfo {
@@ -113,7 +153,6 @@ a:hover {
 
 .custom-hide {
   clear: both;
-  padding-top: 10px;
   display: none;
 }
 
@@ -140,6 +179,7 @@ label {
 }
 
 .tab_container .tab-content p,
+.tab_container .tab-content .user-card,
 .tab_container .tab-content h3 {
   -webkit-animation: fadeinscale 0.7s ease-in-out;
   -moz-animation: fadeinscale 0.7s ease-in-out;

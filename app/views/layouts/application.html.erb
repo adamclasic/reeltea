@@ -12,39 +12,41 @@
   </head>
 
   <body class="bg-light">
-    <% if notice.present? %>
-      <div class="notice">
-        <p> <%= notice %> </p>
-      </div>
-    <% end %>
-    <% if alert.present? %>
-      <div class="alert bg-alert">
-        <p> <%= alert %> </p>
-      </div>
-    <% end %>
+    <div class='.main-cont'>
+      <% if notice.present? %>
+        <div class="notice">
+          <p> <%= notice %> </p>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="alert bg-alert">
+          <p> <%= alert %> </p>
+        </div>
+      <% end %>
 
-    <%if !user_signed_in? %>
-      <div class='mt-4 '>
-        <div class='d-flex'>
-          <div class='m-auto'>
-            <%= yield %>
+      <%if !user_signed_in? %>
+        <div class='mt-4 '>
+          <div class='d-flex'>
+            <div class='m-auto'>
+              <%= yield %>
+            </div>
           </div>
         </div>
-      </div>
-    <%end%>
+      <%end%>
 
-    <%if user_signed_in?%>
+      <%if user_signed_in?%>
 
-      <%= render 'layouts/sidebar' %>
+        <%= render 'layouts/sidebar' %>
 
-    <%end%>
+      <%end%>
 
-    <%if user_signed_in? %>
-      <div class='main '>
-        <%= render 'layouts/navbar' %>
-        <%= yield %>
-      </div>
-    <%end%>
+      <%if user_signed_in? %>
+        <div class='main '>
+          <%= render 'layouts/navbar' %>
+          <%= yield %>
+        </div>
+      <%end%>
 
+    </div>
   </body>
 </html>

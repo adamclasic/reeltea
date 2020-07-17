@@ -1,4 +1,5 @@
-<div class="tab_container">
+<div class='center-cont'>
+    <div class="tab_container ">
     <input class="custom-hide " id="tab1" type="radio" name="tabs" checked>
     <label for="tab1"><span class="">TWEETS</span></label>
 
@@ -8,42 +9,29 @@
     <input class="custom-hide " id="tab3" type="radio" name="tabs">
     <label for="tab3"><span class="">VIDEOS</span></label>
 
-    <section id="content1" class="tab-content custom-hide">
+    <section id="content1" class="tab-content custom-hide py-4">
         <div class="d-flex">
             <div class='profile-body d-flex'>
                 <div class='center-cont w-100'>
 
-                    <div class="new-post-area p-4 m-3 bg-white rounded">
+                    <div class="new-post-area p-4 mx-3 bg-white rounded">
                         <h5 class="text-light-grey h6 font-weight-bold">TWEET SOMETHING</h5>
                         <%= render 'form', tweet: @tweet %>
                     </div>
 
                     <div class=' p-3 m-3 bg-white rounded'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>recent tweets:</th>
-                                    <th colspan="3"></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <% @sortedtweets.each do |tweet| %>
-                                <tr>
-                                    <td><%= tweet.content %></td>
-                                    <% if current_user.id == tweet.author.id %>
-
-                                    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-                                    <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                    <% end %>
-                                    <td><%= link_to 'Show', tweet %></td>
-                                </tr>
-                                <% end %>
-                            </tbody>
-
-                        </table>
-
-
+                        <p class='tweets-header pb-3 border-bottom'> <%=@tweets.size%> NEW TWEETS </P>
+                        <%@tweets.each do |tweet|%>
+                            <div class='user-card d-flex mb-3'>
+                                <div class='avatar-cont mr-2'>
+                                    <%= print_image_squar(tweet.author)%>
+                                </div>
+                                <div class='card-text p '>
+                                    <h6><%= tweet.author.name.split.map(&:capitalize).join(' ')%></h6>
+                                    <h5 class='mb-0'><%= tweet.content%></h5>
+                                </div>
+                            </div>
+                        <%end%>
                     </div>
                 </div>
     </section>
@@ -53,13 +41,13 @@
     <section id="content3" class="tab-content custom-hide">
         <h2>comming soon!</h2>
     </section>
-
-<section class='right-sidebar text-center position-absolute'>
-    <div class=' py-2'>
-        <h5>Who to follow</h5>
+</div>
+<section class='right-sidebar position-absolute px-3 border-left'>
+    <div class=''>
+        <h5 class='m-0 py-3 border-bottom'>Who to follow</h5>
     </div>
 
-    <div class='followed-by py-2'>
+    <div class='followed-by py-4'>
         <%= render 'whotofollow'%>
     </div>
 </section>

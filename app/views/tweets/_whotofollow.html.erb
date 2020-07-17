@@ -1,6 +1,6 @@
 
 <% @users.each do |f|%>
-    <% if !current_user?(f) %>
+    <% unless current_user?(f) %>
         <% if !following?(f) %>
             <div class='position-relative d-flex'>
                 <%= link_to user_path(f.id) do%>
@@ -18,10 +18,8 @@
                     </div>
                 </div>
                 <%end%>
-
                 <%= print_follow_btn(f) %>
             </div>
-        
         <%end%>
     <%end%>
 <%end%>
