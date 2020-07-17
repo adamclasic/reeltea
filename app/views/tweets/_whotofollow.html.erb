@@ -1,23 +1,25 @@
 
 <% @users.each do |f|%>
-    <% if !following?(f) %>
-        <div class='position-relative d-flex'>
-            <%= link_to user_path(f.id) do%>
-            <div class='d-flex'>
-                <div class='user-avatar-section'>
+    <% unless current_user?(f) %>
+        <% if !following?(f) %>
+            <div class='position-relative d-flex'>
+                <%= link_to user_path(f.id) do%>
+                <div class='d-flex'>
+                    <div class='user-avatar-section'>
 
-                    <div class='avatar'>
-                        <%= print_image(f) %>
+                        <div class='avatar'>
+                            <%= print_image(f) %>
+                        </div>
+
                     </div>
-
+                    <div class='px-3 follow-text'>
+                        <p><%= f.name%></p>
+                        <h5 class='f-hashtag'>@<%= f.username%></h5>
+                    </div>
                 </div>
-                <div class='px-3 follow-text'>
-                    <p><%= f.name%></p>
-                    <h5 class='f-hashtag'>@<%= f.username%></h5>
-                </div>
+                <%end%>
+                <%= print_follow_btn(f) %>
             </div>
-            <%end%>
-            <%= print_follow_btn(f) %>
-        </div>
+        <%end%>
     <%end%>
 <%end%>
