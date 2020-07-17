@@ -3,11 +3,7 @@
     <div class='profile-body d-flex'>
         <div class='center-cont w-100'>
             <div class='cover-image w-100' '>
-                <% if @user.cover.attachment %>
-                <%= image_tag(@user.cover, class: 'w-100') %>
-                <% else%>
-                <%= image_tag('cover.jpg', class: 'w-100') %>
-                <% end%>
+                <%= print_cover(@user) %>
             </div>
             <nav class='my-2 border-bottom '>
                 <div class="nav profile-tab d-flex" id="nav-tab" role="tablist">
@@ -42,26 +38,10 @@
                     </div>
                 </div>
                 <div class="tab-pane fade followers-tab" id="nav-profile" role="tabpanel" aria- labelledby="nav-profile-tab">
-                    <% if !@user_followers.empty? %>
-                        <%= render 'users/follows', list:  @user_followers %>
-                    <% else %>
-                        <div class='position-relative'>
-                            <div class='d-flex'>
-                                this user hasn't followers yet.
-                            </div>
-                        </div>
-                    <% end %>
+                    <%= render_following_users(@user_followers) %>
                 </div>
                 <div class="tab-pane fade followers-tab" id="nav-contact" role="tabpanel" aria- labelledby="nav-contact-tab">
-                <% if !@user_followeds.empty? %>
-                    <%= render 'users/follows', list:  @user_followeds %>
-                <% else %>
-                    <div class='position-relative'>
-                        <div class='d-flex'>
-                            this user hasn't followeds yet. 
-                        </div>
-                    </div>
-                <% end %>
+                    <%= render_following_users(@user_followeds) %>
                 </div>
             </div>
         </div>
@@ -70,7 +50,7 @@
             <div class='user-avatar-section d-flex py-2'>
                 <div class='avatar big-avatar d-inline-block m-auto'>
                     <%= print_image(@user) %>
-                    <%= print_follow_btn(@user) if current_user.id != @user.id %>
+                    <%= print_follow_btn(@user) %>
                 </div>
             </div>
             <div class='centered user-name py-2'>
@@ -93,7 +73,7 @@
             </div>
             <div class='followed-by py-2'>
                 <h5>FOLLWED BY</h5>
-                <%= render 'users/follows', list:  @user_followers %>
+                <%= render_following_users(@user_followers) %>
             </div>
         </section>
     </div>
