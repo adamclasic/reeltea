@@ -50,8 +50,8 @@ module ApplicationHelper
   end
 
   def print_cover(user)
-    if user.cover.attachment 
-      image_tag(user.cover, class: 'w-100') 
+    if user.cover.attachment
+      image_tag(user.cover, class: 'w-100')
     else
       image_tag('cover.jpg', class: 'w-100')
     end
@@ -59,18 +59,9 @@ module ApplicationHelper
 
   def render_following_users(user_following_list)
     if !user_following_list.empty?
-        render 'users/follows', list:  user_following_list
+      render 'users/follows', list: user_following_list
     else
-        "No one to display."
+      'No one to display.'
     end
   end
-
-  def print_tweet_btns(tweet)
-    if current_user?(tweet.author)
-      content_tag :td do link_to 'Edit', edit_tweet_path(tweet) end 
-      content_tag :td do link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } end 
-    end
-      content_tag :td do link_to 'Show', tweet end
-  end
-
 end

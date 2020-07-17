@@ -40,9 +40,10 @@ Style/DefWithParentheses:
   Enabled: false
 Style/ConditionalAssignment:
   Enabled: false
+Style/GuardClause:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
-  # Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
