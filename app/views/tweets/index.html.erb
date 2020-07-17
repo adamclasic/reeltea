@@ -19,29 +19,16 @@
                     </div>
 
                     <div class=' p-3 m-3 bg-white rounded'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>recent tweets:</th>
-                                    <th colspan="3"></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <% @sortedtweets.each do |tweet| %>
-                                <tr>
-                                    <td><%= tweet.content %></td>
-                                    <% if current_user.id == tweet.author.id %>
-
-                                    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-                                    <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                    <% end %>
-                                    <td><%= link_to 'Show', tweet %></td>
-                                </tr>
-                                <% end %>
-                            </tbody>
-
-                        </table>
+                            <p class='tweets-header pb-3 border-bottom'> 4 NEW TWEETS </P>
+                            <div class='user-card d-flex mb-3'>
+                                <div class='avatar-cont mr-2'>
+                                    <%= print_image_squar(current_user)%>
+                                </div>
+                                <div class='card-text p '>
+                                    <h6>Miley Ray Cyrus</h6>
+                                    <h5 class='mb-0'>Hey @cosmo I'm just stiing around here doing nottiing around here doing nottiing around here doing nottiing around heretiing around here doing nottiing around here doing nottiing around here doing nottiing around here doing not doing nottiing around here doing nothing</h5>
+                                </div>
+                            </div>
 
 
                     </div>

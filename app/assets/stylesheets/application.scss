@@ -19,7 +19,7 @@ $dark-blue: #213245;
 $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
-
+$bg-grey: rgb(246, 249, 250);
 .main {
   width: 82%;
   margin-left: 18%;
@@ -31,10 +31,37 @@ $light-blue: #5294e2;
 }
 
 .right-sidebar {
+  min-height: 90vh;
   width: 330px;
   float: right;
   right: 0;
   top: 0;
+  background-color: $bg-grey;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text>h6 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.card-text>h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.card-text>h5:hover {
+  color: rgb(138, 138, 138);
+}
+
+.tweets-header {
+  color: $original-blue;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .profile-body {
