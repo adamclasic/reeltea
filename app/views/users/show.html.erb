@@ -5,43 +5,65 @@
             <div class='cover-image w-100' '>
                 <%= print_cover(@user) %>
             </div>
-            <nav class='my-2 border-bottom '>
-                <div class="nav profile-tab d-flex" id="nav-tab" role="tablist">
-                    <a class="nav-item text-dark nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria- selected="false">FOLLOWERS</a>
-                    <a class="nav-item text-dark nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria- selected="false">FOLLOWING</a>
-                    <a class="nav-item text-dark nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria- selected="true">TWEETS</a>
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria- labelledby="nav-home-tab">
-                    <div class='hashtag'>
-                        <div class='new-post-area p-3 m-3 bg-white rounded'>
-                        <h5 class='upcase'>Mention <%=@user.name%></h5>
-                        <%= form_with(model: @tweet, local: true) do |form| %>
-                            <div class="field">
-                                <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
-                                <%= form.submit %>
-                            </div>
-                            <div class="field">
-                                <%= form.file_field :image %>
-                            </div>
-                        <% end %>
+            <div class="tab_container ">
+                <input class="custom-hide " id="tab1" type="radio" name="tabs" checked>
+                <label for="tab1"><span class="">TWEETS</span></label>
 
+                <input class="custom-hide " id="tab2" type="radio" name="tabs">
+                <label for="tab2"><span class="">PHOTOS</span></label>
+
+                <input class="custom-hide " id="tab3" type="radio" name="tabs">
+                <label for="tab3"><span class="">FOLLOWING</span></label>
+
+                <input class="custom-hide " id="tab4" type="radio" name="tabs">
+                <label for="tab4"><span class="">FOLLOWERS</span></label>
+
+                <input class="custom-hide " id="tab5" type="radio" name="tabs">
+                <label for="tab5"><span class="">FAVORITES</span></label>
+
+                <input class="custom-hide " id="tab6" type="radio" name="tabs">
+                <label for="tab6"><span class="">LISTS</span></label>
+
+                <section id="content1" class="tab-content custom-hide py-4">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria- labelledby="nav-home-tab">
+                        <div class='hashtag'>
+                            <div class='new-post-area p-3 m-3 bg-white rounded'>
+                            <h5 class='upcase'>Mention <%=@user.name%></h5>
+                            <%= form_with(model: @tweet, local: true) do |form| %>
+                                <div class="field">
+                                    <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
+                                    <%= form.submit %>
+                                </div>
+                                <div class="field">
+                                    <%= form.file_field :image %>
+                                </div>
+                            <% end %>
+
+                            </div>
+                            <div class=' p-3 m-3 bg-white rounded'>
+                            <h5 class='upcase'>TWEETS BY <%=@user.name%></h5>
+                            <% @user_tweets.each do |tweet|%>
+                                <p> author: <%= link_to tweet.author.name, user_path(tweet.author.id) %></p>
+                                <p> content: <%= tweet.content%>.</p>
+                            <% end %>
+                            </div>
                         </div>
-                        <div class=' p-3 m-3 bg-white rounded'>
-                        <h5 class='upcase'>TWEETS BY <%=@user.name%></h5>
-                        <% @user_tweets.each do |tweet|%>
-                            <p> author: <%= link_to tweet.author.name, user_path(tweet.author.id) %></p>
-                            <p> content: <%= tweet.content%>.</p>
-                        <% end %>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade followers-tab" id="nav-profile" role="tabpanel" aria- labelledby="nav-profile-tab">
-                    <%= render_following_users(@user_followers) %>
-                </div>
-                <div class="tab-pane fade followers-tab" id="nav-contact" role="tabpanel" aria- labelledby="nav-contact-tab">
-                    <%= render_following_users(@user_followeds) %>
+                    </section>
+                    <section id="content2" class="tab-content custom-hide">
+                        <h2>comming soon!</h2>
+                    </section>
+                    <section id="content3" class="tab-content custom-hide">
+                        <%= render_following_users(@user_followeds) %>
+                    </section>
+                    <section id="content4" class="tab-content custom-hide">
+                        <%= render_following_users(@user_followers) %>
+                    </section>
+                    <section id="content5" class="tab-content custom-hide">
+                        <h2>comming soon!</h2>
+                    </section>
+                    <section id="content6" class="tab-content custom-hide">
+                        <h2>comming soon!</h2>
+                    </section>
                 </div>
             </div>
         </div>
