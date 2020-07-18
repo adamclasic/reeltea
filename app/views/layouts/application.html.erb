@@ -17,12 +17,17 @@
     <div class='wrapper'>
       <% if notice.present? %>
         <div class="notice">
-          <p> <%= notice %> </p>
+          <script>
+            $.alert("<%=notice%>", {title:'Info Message',type: 'info',position: ['top-right', [+0.84, 0]],})
+          </script>
         </div>
       <% end %>
       <% if alert.present? %>
         <div class="alert bg-alert">
           <p> <%= alert %> </p>
+          <script>
+            $.alert("<%= alert %>", {title:'warning',type: 'warning',position: ['top-right', [+0.84, 0]],})
+          </script>
         </div>
       <% end %>
 
@@ -34,6 +39,7 @@
             </div>
           </div>
         </div>
+
       <%end%>
 
       <%if user_signed_in?%>
