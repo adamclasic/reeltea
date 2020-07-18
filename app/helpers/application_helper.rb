@@ -23,11 +23,19 @@ module ApplicationHelper
     end
   end
 
+  def print_image_big(user)
+    if user.image.attachment
+      image_tag(user.image, size: '110x110', class: 'rounded-circle')
+    else
+      image_tag('avatar.png', size: '110x110', class: 'rounded-circle')
+    end
+  end
+
   def print_image_squar(user)
     if user.image.attachment
       image_tag(user.image, size: '55x55', class: 'rounded')
     else
-      image_tag('avatar.png', size: '55x55', class: 'rounded')
+      image_tag('avatar-squar.png', size: '55x55', class: 'rounded')
     end
   end
 
