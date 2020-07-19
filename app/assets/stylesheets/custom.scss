@@ -3,7 +3,7 @@ $dark-blue: #213245;
 $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
-$bg-grey: rgb(246, 249, 250);
+$bg-grey: rgb(246, 249, 230);
 
 .wrapper {
   display: flex;
@@ -11,8 +11,8 @@ $bg-grey: rgb(246, 249, 250);
 }
 
 .sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 230px;
+  max-width: 230px;
   min-height: 100vh;
   height: 100%;
   top: 0;
@@ -24,7 +24,7 @@ $bg-grey: rgb(246, 249, 250);
 
 .left-sidebar-cont {
   position: fixed;
-  width: 250px;
+  width: 230px;
   min-height: 100vh;
   background-color: $dark-blue;
 
@@ -46,7 +46,7 @@ $bg-grey: rgb(246, 249, 250);
 
 @media only screen and (max-width: 768px) {
   #sidebar {
-      margin-left: -250px;
+      margin-left: -230px;
   }
   #sidebar.active {
       margin-left: 0;

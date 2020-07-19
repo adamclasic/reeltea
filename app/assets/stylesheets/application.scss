@@ -32,6 +32,8 @@ $text-grey: #a3a3a3;
   margin-left: 18%;
 }
 
+//for profile r sidebar
+
 .right-sidebar {
   width: 330px;
   right: 0;
@@ -40,6 +42,21 @@ $text-grey: #a3a3a3;
 
 .right-sidebar > h5 {
   color: #a3a3a3;
+}
+
+//for profile r sidebar end
+
+.r-sidebar {
+  color: $text-grey;
+}
+
+.r-sidebar h5{
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+.followed-by {
+  width: 250px;
 }
 
 .card-text {
@@ -207,10 +224,6 @@ label .fa {
   display: unset;
 }
 
-.followed-by {
-  width: 250px;
-}
-
 @media only screen and (max-width: 930px) {
   label span {
     font-size: 14px;
@@ -218,6 +231,10 @@ label .fa {
 
   label .fa {
     font-size: 14px;
+  }
+
+  .r-sidebar {
+    display: none;
   }
 }
 
@@ -229,6 +246,7 @@ label .fa {
   label .fa {
     font-size: 16px;
   }
+
 }
 
 .my-button {
@@ -242,15 +260,6 @@ label .fa {
 
 .c-input:hover {
   display: unset;
-}
-
-.r-sidebar {
-  color: $text-grey;
-}
-
-.r-sidebar h5{
-  font-size: 14PX;
-  padding: 20px 0;
 }
 
 .text-grey {
