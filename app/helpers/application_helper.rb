@@ -17,9 +17,9 @@ module ApplicationHelper
 
   def print_image(user)
     if user.image.attachment
-      image_tag(user.image, size: '55x55', class: 'rounded-circle')
+      image_tag(user.image, size: '50x50', class: 'rounded-circle')
     else
-      image_tag('avatar.png', size: '55x55', class: 'rounded-circle')
+      image_tag('avatar.png', size: '50x50', class: 'rounded-circle')
     end
   end
 
@@ -44,13 +44,13 @@ module ApplicationHelper
       if following?(user)
         content_tag :div, class: 'follow-btn f-profile' do
           link_to(following_path(id: user.id), method: :delete) do
-            image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'
+            image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '30x30'
           end
         end
       else
         content_tag :div, class: 'follow-btn f-profile' do
           link_to(followings_path(id: user.id), method: :post) do
-            image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '40x40'
+            image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '30x30'
           end
         end
       end

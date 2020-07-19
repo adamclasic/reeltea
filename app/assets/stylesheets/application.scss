@@ -199,6 +199,18 @@ label .fa {
   color: $original-blue;
 }
 
+.follow-btn-cont {
+  display: none;
+}
+
+.user-card-cont:hover .follow-btn-cont {
+  display: unset;
+}
+
+.followed-by {
+  width: 250px;
+}
+
 @media only screen and (max-width: 930px) {
   label span {
     font-size: 14px;
@@ -216,10 +228,6 @@ label .fa {
 
   label .fa {
     font-size: 16px;
-  }
-
-  .tab_container {
-    // width: 98%;
   }
 }
 

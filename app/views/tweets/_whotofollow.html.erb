@@ -1,8 +1,8 @@
 
-<% @users.each do |f|%>
-    <% unless current_user?(f) %>
-        <% if !following?(f) %>
-            <%= render 'user', user: f %>
+<% @users.each do |user|%>
+    <% unless current_user?(user) %>
+        <% if !following?(user) %>
+            <%= render 'user', user: user %>
         <%end%>
     <%end%>
 <%end%>
