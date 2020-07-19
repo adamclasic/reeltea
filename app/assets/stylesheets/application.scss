@@ -168,12 +168,12 @@ a:hover {
   display: none;
 }
 
-label {
+.tab-label {
   font-weight: 700;
   font-size: 16px;
   display: block;
   float: left;
-  padding: 1em 1.5em;
+  padding: 1rem 1.5em;
   color: #a3a3a3;
   cursor: pointer;
   text-decoration: none;
@@ -202,17 +202,17 @@ label {
   text-align: center;
 }
 
-label .fa {
+.tab-label .fa {
   font-size: 1.3em;
   margin-bottom: 0 !important;
 }
 
-.tab_container [id^="tab"]:checked + label {
+.tab_container [id^="tab"]:checked + .tab-label {
   box-shadow: inset 0 -3px $original-blue;
   color: rgb(32, 32, 32);
 }
 
-.tab_container [id^="tab"]:checked + label .fa {
+.tab_container [id^="tab"]:checked + .tab-label .fa {
   color: $original-blue;
 }
 
@@ -224,13 +224,22 @@ label .fa {
   display: unset;
 }
 
+.custom-navbar-nav {
+  flex-direction: unset !important;
+  justify-content: space-between;
+}
+
+.nav-item > a.nav-link {
+  text-align: end;
+}
+
 @media only screen and (max-width: 930px) {
-  label span {
+  .tab-label {
     font-size: 14px;
   }
 
-  label .fa {
-    font-size: 14px;
+  .tab-label .fa {
+    font-size: 10px;
   }
 
   .r-sidebar {
@@ -239,11 +248,11 @@ label .fa {
 }
 
 @media only screen and (max-width: 768px) {
-  label span {
-    display: none;
+  .tab-label {
+    font-size: 10px;
   }
 
-  label .fa {
+  .tab-label .fa {
     font-size: 16px;
   }
 
