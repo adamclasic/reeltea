@@ -1,14 +1,6 @@
 <div class='left-sidebar-cont'>    
     <div class='d-flex p-2'>
-        <%if current_user.image.attached?%>
-          <div class='rounded'>
-            <%= image_tag(current_user.image, size: "50x50", class: 'rounded') %>
-          </div>
-        <%else%>
-          <div class='rounded'>
-            <%= image_tag('avatar.png', size: "50x50", class: 'rounded') %>
-          </div>
-        <%end%>
+            <%= print_image_squar(current_user)%>
         <h5 class='px-1 mx-auto my-auto'><%= current_user.name.split.map(&:capitalize).join(' ')%></h5>
     </div>
     <div class='follow-counter w-100'>
