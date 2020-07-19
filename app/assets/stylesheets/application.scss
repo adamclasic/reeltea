@@ -20,6 +20,7 @@ $light-dark-blue: #3d609f;
 $light-dark-blue-opacity: #3d5f9f80;
 $light-blue: #5294e2;
 $bg-grey: rgb(246, 249, 250);
+$text-grey: #a3a3a3;
 
 .main-cont {
   max-width: 1425px;
@@ -233,6 +234,19 @@ label .fa {
 
 .c-input:hover {
   display: unset;
+}
+
+.r-sidebar {
+  color: $text-grey;
+}
+
+.r-sidebar h5{
+  font-size: 14PX;
+  padding: 20px 0;
+}
+
+.text-grey {
+  color: $text-grey;
 }
 
 @keyframes fadeinscale {
