@@ -32,11 +32,8 @@ $bg-grey: rgb(246, 249, 250);
 }
 
 .right-sidebar {
-  min-height: 90vh;
   width: 330px;
-  float: right;
   right: 0;
-  top: 58px;
   background-color: $bg-grey;
 }
 
@@ -70,6 +67,7 @@ $bg-grey: rgb(246, 249, 250);
 }
 
 .profile-body {
+  flex: 1;
   width: 100%;
 }
 
