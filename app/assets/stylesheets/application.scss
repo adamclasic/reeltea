@@ -142,8 +142,9 @@ a:hover {
 }
 
 .tab_container {
-  margin: 0 auto;
-  position: relative;
+  // margin: 0 auto;
+  // position: relative;
+  flex: 1;
 }
 
 .custom-hide {
@@ -219,7 +220,7 @@ label .fa {
   }
 
   .tab_container {
-    width: 98%;
+    // width: 98%;
   }
 }
 

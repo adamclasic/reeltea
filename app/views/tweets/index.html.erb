@@ -1,4 +1,4 @@
-<div class=''>
+<div class='d-flex'>
     <div class="tab_container ">
         <input class="custom-hide " id="tab1" type="radio" name="tabs" checked>
         <label for="tab1"><span class="">TWEETS</span></label>
@@ -44,16 +44,17 @@
             <h2>comming soon!</h2>
         </section>
     </div>
-</div>
-<section class='right-sidebar position-absolute px-3 border-left'>
-    <div class=''>
-        <h5 class='m-0 py-3 border-bottom'>Who to follow</h5>
+    <section class='px-3 border-left'>
+        <div class=''>
+            <h5 class='m-0 py-3 border-bottom'>Who to follow</h5>
+        </div>
+
+        <div class='followed-by py-4'>
+            <%= render 'whotofollow'%>
+        </div>
+    </section>
     </div>
 
-    <div class='followed-by py-4'>
-        <%= render 'whotofollow'%>
-    </div>
-</section>
 </div>
 
 </div></div>
