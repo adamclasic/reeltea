@@ -72,4 +72,12 @@ module ApplicationHelper
       'No one to display.'
     end
   end
+  
+  def add_mention(mention)
+    if mention.nil?
+      mention = ''
+    else
+      mention = '@' + mention.to_s
+    end
+  end
 end
