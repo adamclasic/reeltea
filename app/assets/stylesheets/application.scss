@@ -48,15 +48,12 @@ $text-grey: #a3a3a3;
 
 .r-sidebar {
   color: $text-grey;
+  width: 270px;
 }
 
 .r-sidebar h5{
   font-size: 14px;
   padding: 20px 0;
-}
-
-.followed-by {
-  width: 250px;
 }
 
 .card-text {
@@ -273,6 +270,46 @@ a:hover {
 
 .text-grey {
   color: $text-grey;
+}
+
+.user-name-info > h6 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.user-name-info > h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.user-name-info > h5:hover {
+  color: rgb(138, 138, 138);
+}
+
+.profile-followers-tab h6 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.profile-followers-tab h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.profile-followers-tab > div {
+  flex: 1;
+}
+
+.big-avatar > .follow-btn {
+  align-self: center;
+  margin: 0 8px;
+  opacity: 0.3;
+}
+
+.big-avatar > .follow-btn:hover {
+  opacity: 0.5;
 }
 
 @keyframes fadeinscale {

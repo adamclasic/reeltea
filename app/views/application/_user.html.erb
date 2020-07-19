@@ -1,18 +1,18 @@
-<div class='user-card-cont d-flex justify-content-between'>
+<div class='user-card-cont d-flex pt-3 justify-content-between'>
     <%= link_to user_path(user.id) do%>
-    <div class='user-card d-flex mb-3'>
+    <div class='user-card d-flex '>
 
         <div class='avatar-cont mr-2'>
             <%= print_image(user) %>
         </div>
 
-        <div class='card-text p'>
-            <h6 class='text-body'><%= user.name.split.map(&:capitalize).join(' ')%></%></h4>
+        <div class='card-text'>
+            <h6 class='text-body'><%= user.name.split.map(&:capitalize).join(' ')%></%></h6>
             <h5 class='mb-0 p-0'>@<%= user.username%></h5>
         </div>
     </div>
     <%end%>
-    <div class='follow-btn-cont '>
+    <div class='follow-btn-cont  '>
         <%= print_follow_btn(user) %>
     </div>
 </div>

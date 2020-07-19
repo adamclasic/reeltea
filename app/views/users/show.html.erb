@@ -22,7 +22,6 @@
 
                 <input class="custom-hide " id="tab6" type="radio" name="tabs">
                 <label class='tab-label'  for="tab6"><span class="">LISTS</span></label>
-
                 <section id="content1" class="tab-content custom-hide py-4">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria- labelledby="nav-home-tab">
                         <div class="d-flex">
@@ -72,33 +71,34 @@
 </div>
 </div>
 
-<section class='right-sidebar text-center'>
-    <div class='user-avatar-section d-flex py-2'>
-        <div class='avatar big-avatar d-inline-block m-auto'>
-            <%= print_image_big(@user) %>
+<section class='border-left r-sidebar text-center'>
+    <div class='user-avatar-section d-flex py-3'>
+        <div class='avatar big-avatar d-inline-block pt-4 m-auto d-flex'>
             <%= print_follow_btn(@user) %>
+            <%= print_image_big(@user) %>
+            <%= print_menu_btn(@user) %>
         </div>
     </div>
-    <div class='centered user-name py-2'>
-        <h4 class='upcase'><%= @user.name%></h4>
-        <h5>@<%= @user.username%></h5>
+    <div class='centered user-name-info py-2'>
+        <h6 class='text-body'><%= @user.name.split.map(&:capitalize).join(' ')%></%></h6>
+        <h5 class='mb-0 p-0'>@<%= @user.username%></h5>
     </div>
-    <div class='profile-followers-tab py-2 d-flex justify-content-center'>
-        <div class='border p-2'>
-            <h5><%= @user.tweets.size %></h5>
-            <p>TWEETS</p>
+    <div class='profile-followers-tab pt-2 d-flex justify-content-center'>
+        <div class='border p-1'>
+             <h6 class='text-body'><%= @user.tweets.size %></h6>
+            <h5 class='mb-0 p-0'>Tweets</h5>
         </div>
-        <div class='border  p-2'>
-            <h5><%= @user_followers.size %></h5>
-            <p>FOLLOWERS</p>
+        <div class='border  p-1'>
+             <h6 class='text-body'><%= @user_followers.size %></h6>
+            <h5 class='mb-0 p-0'>Followers</h5>
         </div>
-        <div class='border  p-2'>
-            <h5><%= @user_followeds.size %></h5>
-            <p>FOLLOWING</p>
+        <div class='border  p-1'>
+             <h6 class='text-body'><%= @user_followeds.size %></h6>
+            <h5 class='mb-0 p-0'>Following</h5>
         </div>
     </div>
-    <div class='followed-by py-2'>
-        <h5>FOLLWED BY</h5>
+    <div class='followed-by  px-3'>
+        <h5 class='border-bottom r-sidebar m-0 text-left'>FOLLWED BY</h5>
         <%= render_following_users(@user_followers) %>
     </div>
 </section>

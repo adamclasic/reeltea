@@ -57,11 +57,19 @@ module ApplicationHelper
     end
   end
 
+  def print_menu_btn(user)
+    unless current_user?(user)
+      content_tag :div, class: 'follow-btn f-profile' do
+        image_tag 'https://image.flaticon.com/icons/svg/149/149176.svg', size: '30x30'
+      end
+    end
+  end
+
   def print_cover(user)
     if user.cover.attachment
       image_tag(user.cover, class: 'w-100')
     else
-      image_tag('cover.jpg', class: 'w-100')
+      image_tag('cover.jpg', class: 'w-100', size: '1000x236')
     end
   end
 
