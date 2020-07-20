@@ -35,8 +35,8 @@
 ## About The Project
 
 [![Product Name Screen Shot]['assets/images/screenshot.png']]
-![Screen Shot](app/assets/imgaes/screenshot.png)
-![Screenshot](screenshot.png)
+![Screen Shot](app/assets/images/screenshot.png)
+![Screenshot](app/assets/imagesscreenshot.png)
 The project is about a platform for sharing ideas. An authenticated user is allowed to post a vyew (idea) and his/her followers downvote or upvote the idea. The user has to follow other users in order to see their Reeltea.
 
 ### Built With
