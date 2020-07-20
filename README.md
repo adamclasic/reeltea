@@ -9,7 +9,7 @@
   <p align="center">
     Idea sharing app.
     <br /><br/>
-    <a href="https://intense-temple-98550.herokuapp.com/"><strong>VIEW DEMO »</strong></a>
+    <a href="https://intense-temple-98550.herokuapp.com/users/sign_up"><strong>VIEW DEMO »</strong></a>
     <br />
     <br />
    
