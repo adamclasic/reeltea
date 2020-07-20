@@ -37,7 +37,7 @@ $text-grey: #a3a3a3;
   width: 270px;
 }
 
-.r-sidebar h5{
+.r-sidebar h5 {
   font-size: 14px;
   padding: 20px 0;
 }
@@ -50,6 +50,16 @@ $text-grey: #a3a3a3;
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 4px;
+}
+
+.profile-followers-tab h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.user-name-info > h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
 }
 
 .card-text > h5 {
@@ -261,11 +271,6 @@ a:hover {
   margin-bottom: 4px;
 }
 
-.user-name-info > h5 {
-  color: rgb(165, 164, 164);
-  font-size: 14px;
-}
-
 .user-name-info > h5:hover {
   color: rgb(138, 138, 138);
 }
@@ -274,11 +279,6 @@ a:hover {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 4px;
-}
-
-.profile-followers-tab h5 {
-  color: rgb(165, 164, 164);
-  font-size: 14px;
 }
 
 .profile-followers-tab > div {
@@ -301,7 +301,7 @@ a:hover {
   display: flex;
   width: 100%;
   justify-content: center;
-  background-image: -webkit-linear-gradient( -36deg, $dark-blue, $original-blue 100%);
+  background-image: -webkit-linear-gradient(-36deg, $dark-blue, $original-blue 100%);
 }
 
 .sign-card {
@@ -325,6 +325,7 @@ a:hover {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
+
 @keyframes fadeinscale {
   0% {
     transform: scale(0.9);
