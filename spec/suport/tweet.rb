@@ -8,7 +8,7 @@ class Vyew
 
   def tweet(content)
     fill_in 'tweet[content]', with: content
-    click_on('Create Tweet')
+    find("#register-button").click
     self
   end
 end
