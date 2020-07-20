@@ -17,18 +17,14 @@
   <body class="bg-light">
     <div class='wrapper'>
       <% if notice.present? %>
-        <div class="notice">
-          <script>
-            $.alert("<%=notice%>", {title:'Info Message',type: 'info',position: ['top-right', [+0.84, 0]],})
-          </script>
-        </div>
+        <script>
+          $.alert("<%=notice%>", {title:'Info Message',type: 'info',position: ['top-right', [+0.84, 0]],})
+        </script>
       <% end %>
-      <% if alert.present? %>
-        <div class="alert bg-alert">
-          <script>
-            $.alert("<%= alert %>", {title:'warning',type: 'warning',position: ['top-right', [+0.84, 0]],})
-          </script>
-        </div>
+    <% if alert.present? %>
+        <script>
+          $.alert("<%= alert %>", {title:'warning',type: 'warning',position: ['top-right', [+0.84, 0]],})
+        </script>
       <% end %>
 
       <%if !user_signed_in? %>
