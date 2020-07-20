@@ -20,8 +20,6 @@
                 <input class="custom-hide " id="tab5" type="radio" name="tabs">
                 <label class='tab-label'  for="tab5"><span class="">FAVORITES</span></label>
 
-                <input class="custom-hide " id="tab6" type="radio" name="tabs">
-                <label class='tab-label'  for="tab6"><span class="">LISTS</span></label>
                 <section id="content1" class="tab-content custom-hide py-4">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria- labelledby="nav-home-tab">
                         <div class="d-flex">
@@ -30,7 +28,7 @@
 
                     <div class="new-post-area p-4 mx-3 bg-white rounded">
                         <h5 class="text-light-grey h6 font-weight-bold">TWEET SOMETHING</h5>
-                        <%= render 'form', tweet: @tweet, mention: @user.username %>
+                        <%= render 'tweetform', tweet: @tweet, mention: @user.username %>
                     </div>
 
                     <div class=' p-3 m-3 bg-white rounded'>
@@ -53,20 +51,26 @@
     </div>
     </section>
     <section id="content2" class="tab-content custom-hide">
-        <h2><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        <div class=' p-3 m-3 bg-white rounded'>
+            <h2><br><br><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        </div>
     </section>
     <section id="content3" class="tab-content custom-hide">
-        <%= render_following_users(@user_followeds) %>
+        <div class=' p-3 m-3 bg-white rounded'>
+            <%= render_following_users(@user_followeds) %>
+        </div>
     </section>
     <section id="content4" class="tab-content custom-hide">
-        <%= render_following_users(@user_followers) %>
+        <div class=' p-3 m-3 bg-white rounded'>
+            <%= render_following_users(@user_followers) %>
+        </div>
     </section>
     <section id="content5" class="tab-content custom-hide">
-        <h2><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        <div class=' p-3 m-3 bg-white rounded'>
+            <h2><br><br><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        </div>
     </section>
-    <section id="content6" class="tab-content custom-hide">
-        <h2><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br>!</h2>
-    </section>
+
 </div>
 </div>
 </div>
