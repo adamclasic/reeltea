@@ -32,20 +32,6 @@ $text-grey: #a3a3a3;
   margin-left: 18%;
 }
 
-//for profile r sidebar
-
-.right-sidebar {
-  width: 330px;
-  right: 0;
-  background-color: $bg-grey;
-}
-
-.right-sidebar > h5 {
-  color: #a3a3a3;
-}
-
-//for profile r sidebar end
-
 .r-sidebar {
   color: $text-grey;
   width: 270px;
@@ -155,8 +141,6 @@ a:hover {
 }
 
 .tab_container {
-  // margin: 0 auto;
-  // position: relative;
   flex: 1;
 }
 
@@ -335,10 +319,6 @@ a:hover {
   padding: 30px 40px;
   position: relative;
   width: 100%;
-}
-
-.sign-card #form-left {
-  display: none !important;
 }
 
 .form-left img {

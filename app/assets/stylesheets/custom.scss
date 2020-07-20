@@ -27,7 +27,6 @@ $bg-grey: rgb(246, 249, 230);
   width: 230px;
   min-height: 100vh;
   background-color: $dark-blue;
-
 }
 
 .content {
@@ -46,10 +45,10 @@ $bg-grey: rgb(246, 249, 230);
 
 @media only screen and (max-width: 768px) {
   #sidebar {
-      margin-left: -230px;
+    margin-left: -230px;
   }
   #sidebar.active {
-      margin-left: 0;
+    margin-left: 0;
   }
 
   #sidebarCollapse {

@@ -25,7 +25,6 @@
       <% end %>
       <% if alert.present? %>
         <div class="alert bg-alert">
-          <p> <%= alert %> </p>
           <script>
             $.alert("<%= alert %>", {title:'warning',type: 'warning',position: ['top-right', [+0.84, 0]],})
           </script>
