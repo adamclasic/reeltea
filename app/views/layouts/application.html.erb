@@ -33,12 +33,8 @@
       <% end %>
 
       <%if !user_signed_in? %>
-        <div class='mt-4 '>
-          <div class='d-flex'>
-            <div class='m-auto'>
+        <div class='sign-cont'>
               <%= yield %>
-            </div>
-          </div>
         </div>
 
       <%end%>

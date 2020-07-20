@@ -252,7 +252,6 @@ a:hover {
   .tab-label .fa {
     font-size: 16px;
   }
-
 }
 
 .my-button {
@@ -312,6 +311,40 @@ a:hover {
   opacity: 0.5;
 }
 
+.sign-cont {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-image: -webkit-linear-gradient( -36deg, $dark-blue, $original-blue 100%);
+}
+
+.sign-card {
+  background: #fff;
+  color: $text-grey;
+  position: relative;
+  display: flex;
+  font-weight: 700;
+  border-radius: 8px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.form-right {
+  padding: 30px 40px;
+  position: relative;
+  width: 100%;
+}
+
+.sign-card #form-left {
+  display: none !important;
+}
+
+.form-left img {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
 @keyframes fadeinscale {
   0% {
     transform: scale(0.9);
