@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-cinfo">
+<nav class="navbar container-fluid navbar-expand-lg navbar-dark bg-cinfo">
+  <button type="button" id="sidebarCollapse" class="btn btn-dark-blue">
+      <i class="fas fa-align-left"></i>
+  </button>
   <a class="navbar-brand" style="font-family: Montserrat;" href="<%= tweets_path %>"><%= image_tag('logo.png', size: "30x30") %>reeltea</a>
         
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,7 +9,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto ">
+    <ul class="navbar-nav custom-navbar-nav ml-auto ">
       <li class="nav-item ">
         <a class="nav-link text-bluedark" href="<%= tweets_path %>"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
       </li>
@@ -20,7 +23,7 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-bluedark" href="#" id="navbarDropdown" data-offset="80" data-offset="left" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i>
+        <a class="nav-link dropdown-toggle text-bluedark" href="#" id="navbarDropdown" data-offset="0.5" data-offset="right" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
             <%= link_to  "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>

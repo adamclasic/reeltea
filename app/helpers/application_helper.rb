@@ -17,9 +17,17 @@ module ApplicationHelper
 
   def print_image(user)
     if user.image.attachment
-      image_tag(user.image, size: '55x55', class: 'rounded-circle')
+      image_tag(user.image, size: '50x50', class: 'rounded-circle')
     else
-      image_tag('avatar.png', size: '55x55', class: 'rounded-circle')
+      image_tag('avatar.png', size: '50x50', class: 'rounded-circle')
+    end
+  end
+
+  def print_image_big(user)
+    if user.image.attachment
+      image_tag(user.image, size: '110x110', class: 'rounded-circle')
+    else
+      image_tag('avatar.png', size: '110x110', class: 'rounded-circle')
     end
   end
 
@@ -27,7 +35,7 @@ module ApplicationHelper
     if user.image.attachment
       image_tag(user.image, size: '55x55', class: 'rounded')
     else
-      image_tag('avatar.png', size: '55x55', class: 'rounded')
+      image_tag('avatar-squar.png', size: '55x55', class: 'rounded')
     end
   end
 
@@ -36,15 +44,23 @@ module ApplicationHelper
       if following?(user)
         content_tag :div, class: 'follow-btn f-profile' do
           link_to(following_path(id: user.id), method: :delete) do
-            image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '40x40'
+            image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg', size: '30x30'
           end
         end
       else
         content_tag :div, class: 'follow-btn f-profile' do
           link_to(followings_path(id: user.id), method: :post) do
-            image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '40x40'
+            image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg', size: '30x30'
           end
         end
+      end
+    end
+  end
+
+  def print_menu_btn(user)
+    unless current_user?(user)
+      content_tag :div, class: 'follow-btn f-profile' do
+        image_tag 'https://image.flaticon.com/icons/svg/149/149176.svg', size: '30x30'
       end
     end
   end
@@ -53,7 +69,7 @@ module ApplicationHelper
     if user.cover.attachment
       image_tag(user.cover, class: 'w-100')
     else
-      image_tag('cover.jpg', class: 'w-100')
+      image_tag('cover.jpg', class: 'w-100', size: '1000x236')
     end
   end
 
@@ -62,6 +78,14 @@ module ApplicationHelper
       render 'users/follows', list: user_following_list
     else
       'No one to display.'
+    end
+  end
+
+  def add_mention(mention)
+    if mention.nil?
+      mention = ''
+    else
+      mention = '@' + mention.to_s
     end
   end
 end

@@ -1,80 +1,110 @@
-
 <div class="d-flex">
     <div class='profile-body d-flex'>
         <div class='center-cont w-100'>
             <div class='cover-image w-100' '>
                 <%= print_cover(@user) %>
             </div>
-            <nav class='my-2 border-bottom '>
-                <div class="nav profile-tab d-flex" id="nav-tab" role="tablist">
-                    <a class="nav-item text-dark nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria- selected="false">FOLLOWERS</a>
-                    <a class="nav-item text-dark nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria- selected="false">FOLLOWING</a>
-                    <a class="nav-item text-dark nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria- selected="true">TWEETS</a>
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria- labelledby="nav-home-tab">
-                    <div class='hashtag'>
-                        <div class='new-post-area p-3 m-3 bg-white rounded'>
-                        <h5 class='upcase'>Mention <%=@user.name%></h5>
-                        <%= form_with(model: @tweet, local: true) do |form| %>
-                            <div class="field">
-                                <%= form.text_field :content, value: "@#{@user.username}", autocomplete: 'off', disabled: false %>
-                                <%= form.submit %>
-                            </div>
-                            <div class="field">
-                                <%= form.file_field :image %>
-                            </div>
-                        <% end %>
+            <div class="tab_container ">
+                <input class="custom-hide " id="tab1" type="radio" name="tabs" checked>
+                <label class='tab-label'  for="tab1"><span class="">TWEETS</span></label>
 
-                        </div>
-                        <div class=' p-3 m-3 bg-white rounded'>
-                        <h5 class='upcase'>TWEETS BY <%=@user.name%></h5>
-                        <% @user_tweets.each do |tweet|%>
-                            <p> author: <%= link_to tweet.author.name, user_path(tweet.author.id) %></p>
-                            <p> content: <%= tweet.content%>.</p>
-                        <% end %>
-                        </div>
+                <input class="custom-hide " id="tab2" type="radio" name="tabs">
+                <label class='tab-label'  for="tab2"><span class="">PHOTOS</span></label>
+
+                <input class="custom-hide " id="tab3" type="radio" name="tabs">
+                <label class='tab-label'  for="tab3"><span class="">FOLLOWING</span></label>
+
+                <input class="custom-hide " id="tab4" type="radio" name="tabs">
+                <label class='tab-label'  for="tab4"><span class="">FOLLOWERS</span></label>
+
+                <input class="custom-hide " id="tab5" type="radio" name="tabs">
+                <label class='tab-label'  for="tab5"><span class="">FAVORITES</span></label>
+
+                <section id="content1" class="tab-content custom-hide py-4">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria- labelledby="nav-home-tab">
+                        <div class="d-flex">
+                            <div class=' profile-body d-flex'>
+                <div class='center-cont w-100'>
+
+                    <div class="new-post-area p-4 mx-3 bg-white rounded">
+                        <h5 class="text-light-grey h6 font-weight-bold">TWEET SOMETHING</h5>
+                        <%= render 'tweetform', tweet: @tweet, mention: @user.username %>
                     </div>
-                </div>
-                <div class="tab-pane fade followers-tab" id="nav-profile" role="tabpanel" aria- labelledby="nav-profile-tab">
-                    <%= render_following_users(@user_followers) %>
-                </div>
-                <div class="tab-pane fade followers-tab" id="nav-contact" role="tabpanel" aria- labelledby="nav-contact-tab">
-                    <%= render_following_users(@user_followeds) %>
+
+                    <div class=' p-3 m-3 bg-white rounded'>
+                        <p class='tweets-header pb-3 border-bottom'> <%=@user_tweets.size%> NEW TWEETS </P>
+                        <%@user_tweets.each do |tweet|%>
+                        <div class='user-card d-flex mb-3'>
+                            <div class='avatar-cont mr-2'>
+                                <%= print_image_squar(tweet.author)%>
+                            </div>
+                            <div class='card-text p '>
+                                <h6><%= tweet.author.name.split.map(&:capitalize).join(' ')%></h6>
+                                <h5 class='mb-0'><%= tweet.content%></h5>
+                            </div>
+                        </div>
+                        <%end%>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <section class='right-sidebar text-center'>
-            <div class='user-avatar-section d-flex py-2'>
-                <div class='avatar big-avatar d-inline-block m-auto'>
-                    <%= print_image(@user) %>
-                    <%= print_follow_btn(@user) %>
-                </div>
-            </div>
-            <div class='centered user-name py-2'>
-                <h4 class='upcase'><%= @user.name%></h4>
-                <h5>@<%= @user.username%></h5>
-            </div>
-            <div class='profile-followers-tab py-2 d-flex justify-content-center'>
-                <div class='border p-2'>
-                    <h5><%= @user.tweets.size%></h5>
-                    <p>TWEETS</p>
-                </div>
-                <div class='border  p-2'>
-                    <h5><%= @user_followers.size%></h5>
-                    <p>FOLLOWERS</p>
-                </div>
-                <div class='border  p-2'>
-                    <h5><%= @user_followeds.size%></h5>
-                    <p>FOLLOWING</p>
-                </div>
-            </div>
-            <div class='followed-by py-2'>
-                <h5>FOLLWED BY</h5>
-                <%= render_following_users(@user_followers) %>
-            </div>
-        </section>
     </div>
+    </section>
+    <section id="content2" class="tab-content custom-hide">
+        <div class=' p-3 m-3 bg-white rounded'>
+            <h2><br><br><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        </div>
+    </section>
+    <section id="content3" class="tab-content custom-hide">
+        <div class=' p-3 m-3 bg-white rounded'>
+            <%= render_following_users(@user_followeds) %>
+        </div>
+    </section>
+    <section id="content4" class="tab-content custom-hide">
+        <div class=' p-3 m-3 bg-white rounded'>
+            <%= render_following_users(@user_followers) %>
+        </div>
+    </section>
+    <section id="content5" class="tab-content custom-hide">
+        <div class=' p-3 m-3 bg-white rounded'>
+            <h2><br><br><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        </div>
+    </section>
+
+</div>
+</div>
+</div>
+
+<section class='border-left r-sidebar text-center'>
+    <div class='user-avatar-section d-flex py-3'>
+        <div class='avatar big-avatar d-inline-block pt-4 m-auto d-flex'>
+            <%= print_follow_btn(@user) %>
+            <%= print_image_big(@user) %>
+            <%= print_menu_btn(@user) %>
+        </div>
+    </div>
+    <div class='centered user-name-info py-2'>
+        <h6 class='text-body'><%= @user.name.split.map(&:capitalize).join(' ')%></%></h6>
+        <h5 class='mb-0 p-0'>@<%= @user.username%></h5>
+    </div>
+    <div class='profile-followers-tab pt-2 d-flex justify-content-center'>
+        <div class='border p-1'>
+             <h6 class='text-body'><%= @user.tweets.size %></h6>
+            <h5 class='mb-0 p-0'>Tweets</h5>
+        </div>
+        <div class='border  p-1'>
+             <h6 class='text-body'><%= @user_followers.size %></h6>
+            <h5 class='mb-0 p-0'>Followers</h5>
+        </div>
+        <div class='border  p-1'>
+             <h6 class='text-body'><%= @user_followeds.size %></h6>
+            <h5 class='mb-0 p-0'>Following</h5>
+        </div>
+    </div>
+    <div class='followed-by  px-3'>
+        <h5 class='border-bottom r-sidebar m-0 text-left'>FOLLWED BY</h5>
+        <%= render_following_users(@user_followers) %>
+    </div>
+</section>
+</div>
 </div>
