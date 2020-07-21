@@ -1,42 +1,8 @@
 
-<% @users.each do |f|%>
-    <% if !current_user.followeds.include?(f) %>
-    <div class='position-relative'>
-        <%= link_to user_path(f) do%>
-        <div class='d-flex'>
-            <div class='user-avatar-section'>
-
-                <div class='avatar'>
-                    <% if f.image.attachment %>
-                    <%= image_tag(f.image, size: '90x90', class: 'rounded-circle') %>
-                    <% else%>
-                    <%= image_tag('avatar.png', size: '90x90', class: 'rounded-circle') %>
-                    <% end%>
-                </div>
-
-            </div>
-            <div class='px-3 follow-text'>
-                <p><%= f.name%></p>
-                <h5 class='f-hashtag'>@<%= f.username%></h5>
-            </div>
-        </div>
+<% @users.each do |user|%>
+    <% unless current_user?(user) %>
+        <% if !following?(user) %>
+            <%= render 'user', user: user %>
         <%end%>
-        <% if @user == current_user %>
-        <% if true#current_user.following?(f) %>
-        <div class='follow-btn f-profile'>
-            <%#= link_to(user_follower_path(f), method: :delete) do%>
-            <%#= image_tag 'https://image.flaticon.com/icons/svg/149/149146.svg' %>
-            <%end%>
-        </div>
-        <%else %>
-        <div class='follow-btn f-profile'>
-            <%#= link_to(user_followers_path(f), method: :post) do%>
-            <%#= image_tag 'https://image.flaticon.com/icons/svg/149/149145.svg' %>
-            <%end%>
-        </div>
-        <%end%>
-        <%#end%>
-  </div>
+    <%end%>
 <%end%>
-
-<%#end%>

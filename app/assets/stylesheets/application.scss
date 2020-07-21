@@ -12,27 +12,328 @@
  *
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  */
- @import "bootstrap";
+@import "bootstrap";
 
- .main {
-    width: 82%;
-    margin-left: 18%;
- }
+$original-blue: #588fe5;
+$dark-blue: #213245;
+$light-dark-blue: #3d609f;
+$light-dark-blue-opacity: #3d5f9f80;
+$light-blue: #5294e2;
+$bg-grey: rgb(246, 249, 250);
+$text-grey: #a3a3a3;
 
- .sidebar {
-    width: 18%;
-    background-color: #213245;
-    // margin-left: 18%;
- }
+.main-cont {
+  max-width: 1425px;
+  margin: auto;
+}
 
- .right-sidebar {
-    width: 30%;
- }
+.main {
+  width: 82%;
+  margin-left: 18%;
+}
 
- .profile-body {
-   width: 100%;
+.r-sidebar {
+  color: $text-grey;
+  width: 270px;
+}
+
+.r-sidebar h5 {
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text > h6 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.profile-followers-tab h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.user-name-info > h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.card-text > h5 {
+  color: rgb(165, 164, 164);
+  font-size: 14px;
+}
+
+.card-text > h5:hover {
+  color: rgb(138, 138, 138);
+}
+
+.tweets-header {
+  color: $original-blue;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.profile-body {
+  flex: 1;
+  width: 100%;
+}
+
+.center-cont {
+  width: 837px;
 }
 
 .bg-cinfo {
-   background-color: #5294e2;
+  background-color: $original-blue;
+}
+
+.leftbar-active {
+  background-color: $light-blue;
+  color: white !important;
+}
+
+.disabled {
+  color: rgb(83, 83, 83);
+  cursor: pointer;
+}
+
+.text-bluedark {
+  color: $light-dark-blue !important;
+}
+
+.text-bluedark:hover {
+  color: rgba(234, 234, 234, 0.5) !important;
+}
+
+.text-light-grey {
+  color: rgb(165, 165, 165);
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f6f9fa;
+}
+
+h1 {
+  color: #ccc;
+  text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.tab_container {
+  flex: 1;
+}
+
+.custom-hide {
+  clear: both;
+  display: none;
+}
+
+.tab-label {
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  float: left;
+  padding: 1rem 1.5em;
+  color: #a3a3a3;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+  border-top: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content .user-card,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeinscale 0.7s ease-in-out;
+  -moz-animation: fadeinscale 0.7s ease-in-out;
+  animation: fadeinscale 0.7s ease-in-out;
+}
+
+.tab_container .tab-content h3 {
+  text-align: center;
+}
+
+.tab-label .fa {
+  font-size: 1.3em;
+  margin-bottom: 0 !important;
+}
+
+.tab_container [id^="tab"]:checked + .tab-label {
+  box-shadow: inset 0 -3px $original-blue;
+  color: rgb(32, 32, 32);
+}
+
+.tab_container [id^="tab"]:checked + .tab-label .fa {
+  color: $original-blue;
+}
+
+.follow-btn-cont {
+  display: none;
+}
+
+.user-card-cont:hover .follow-btn-cont {
+  display: unset;
+}
+
+.custom-navbar-nav {
+  flex-direction: unset !important;
+  justify-content: space-between;
+}
+
+.nav-item > a.nav-link {
+  text-align: end;
+}
+
+@media only screen and (max-width: 930px) {
+  .tab-label {
+    font-size: 14px;
+  }
+
+  .tab-label .fa {
+    font-size: 10px;
+  }
+
+  .r-sidebar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tab-label {
+    font-size: 10px;
+  }
+
+  .tab-label .fa {
+    font-size: 16px;
+  }
+}
+
+.my-button {
+  background-color: inherit;
+  border: 0;
+}
+
+.c-input {
+  display: none;
+}
+
+.c-input:hover {
+  display: unset;
+}
+
+.text-grey {
+  color: $text-grey;
+}
+
+.user-name-info > h6 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.user-name-info > h5:hover {
+  color: rgb(138, 138, 138);
+}
+
+.profile-followers-tab h6 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.profile-followers-tab > div {
+  flex: 1;
+}
+
+.big-avatar > .follow-btn {
+  align-self: center;
+  margin: 0 8px;
+  opacity: 0.3;
+}
+
+.big-avatar > .follow-btn:hover {
+  opacity: 0.5;
+}
+
+.sign-cont {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-image: -webkit-linear-gradient(-36deg, $dark-blue, $original-blue 100%);
+}
+
+.sign-card {
+  background: #fff;
+  color: $text-grey;
+  position: relative;
+  display: flex;
+  font-weight: 700;
+  border-radius: 8px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.form-right {
+  padding: 30px 40px;
+  position: relative;
+  width: 100%;
+}
+
+.form-left img {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+@keyframes fadeinscale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

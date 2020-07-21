@@ -1,5 +1,5 @@
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
-/home/adam/.rbenv/versions/2.7.0/bin/ruby -I /home/adam/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200703-3901-fw78z2.rb extconf.rb
+/home/adam/.rbenv/versions/2.7.0/bin/ruby -I /home/adam/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200710-3475-187rq8.rb extconf.rb
 creating Makefile
 
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +12,4 @@ linking shared-object skiptrace/internal/cruby.so
 
 current directory: /home/adam/Documents/micro/reeltea/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.so ./.gem.20200703-3901-1hom1fa/skiptrace/internal
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200710-3475-2lwugk/skiptrace/internal

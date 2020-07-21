@@ -2,44 +2,52 @@
 <html>
   <head>
     <title>Reeltea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/5e0cee5c01.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'custom' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favi32.png' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   </head>
 
   <body class="bg-light">
+    <div class='wrapper'>
+      <% if notice.present? %>
+        <script>
+          $.alert("<%=notice%>", {title:'Info Message',type: 'info',position: ['top-right', [+0.84, 0]],})
+        </script>
+      <% end %>
+    <% if alert.present? %>
+        <script>
+          $.alert("<%= alert %>", {title:'warning',type: 'warning',position: ['top-right', [+0.84, 0]],})
+        </script>
+      <% end %>
 
       <%if !user_signed_in? %>
-      <div class='mt-4 '>
-        <div class='d-flex'>
-          <div class='m-auto'>
-            <%= yield %>
-          </div>
+        <div class='sign-cont'>
+              <%= yield %>
         </div>
-      </div>
-    <%end%>
 
-    <%if user_signed_in?%>
+      <%end%>
 
-      <%= render 'layouts/sidebar' %>
+      <%if user_signed_in?%>
+        <nav id="sidebar" class='sidebar  text-secondary'>
+          <%= render 'layouts/sidebar' %>
+        </nav>
+      <%end%>
 
-    <%end%>
+      <%if user_signed_in? %>
+        <div class='content' id="content">
+          <%= render 'layouts/navbar' %>
+          <%= yield %>
+        </div>
+      <%end%>
 
-    <%if user_signed_in? %>
-      <div class='main '>
-        <%= render 'layouts/navbar' %>
-    <%= yield %>
-
-      </div>
-    <%end%>
-
-    <div class=''>
     </div>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
   </body>
 </html>

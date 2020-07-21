@@ -1,38 +1,50 @@
-<nav class='sidebar position-fixed text-secondary h-100'>
-  <div class='d-flex p-2'>
-    <%if current_user.image.attached?%>
-      <%= image_tag(current_user.image, size: "50x50") %>
-    <%else%>
-      <div class='avatar'>
-        <%= image_tag('avatar.png', size: "50x50") %>
-      </div>
-    <%end%>
-    <h5 class='px-1 mx-auto my-auto'><%= current_user.name.upcase%></h5>
-  </div>
-  <div class='follow-counter f-row'>
-    <div class='d-flex'>
-      <div class='p-1'>
-        <%=current_user.followeds.size%>
-        <p>Following</p>
-      </div>
-      <div class='p-1'>
-        <%=current_user.followers.size%>
-        <p>Followers</p>
-      </div>
+<div class='left-sidebar-cont'>    
+    <div class='d-flex p-2'>
+            <%= print_image_squar(current_user)%>
+        <h5 class='px-1 mx-auto my-auto'><%= current_user.name.split.map(&:capitalize).join(' ')%></h5>
     </div>
-  </div>
-  <div class='side-links text-white'>
-    <%= link_to tweets_path do %>
-      <div class='d-flex p-3 text-white'>
-        <i class='fas fa-home'></i>
-        <span>HOME</span>
-      </div>
-    <%end%>
-    <%= link_to user_path(current_user) do %>
-      <div class='d-flex p-3 text-white'>
-        <i class='fas fa-user'></i>
-        <span>PROFILE</span>
-      </div>
-    <%end%>
-  </div>
-</nav>
+    <div class='follow-counter w-100'>
+        <div class='d-flex w-100 my-2'>
+            <div class='p-1 w-50 text-center'>
+                <p class="text-white h4 mb-0"><%=current_user.followeds.size%></p>
+                <p class="h6">Following</p>
+            </div>
+            <div class='p-1 w-50 text-center'>
+                <p class="text-white h4 mb-0"><%=current_user.followers.size%></p>
+                <p class="h6">Followers</p>
+            </div>
+        </div>
+    </div>
+    <div class='side-links '>
+
+        <%= link_to tweets_path do %>
+        <div class='d-flex p-3 text-secondary leftbar-<%= active?(tweets_path) %>'>
+            <i class='fas fa-home pr-2'></i>
+            <span>HOME</span>
+        </div>
+        <%end%>
+
+        <div class='d-flex p-3 disabled '>
+            <i class='fas fa-at pr-2'></i>
+            <span>CONNECT</span>
+        </div>
+
+        <%= link_to user_path(current_user) do %>
+        <div class='d-flex p-3 text-secondary leftbar-<%= active?(user_path(current_user))  %>'>
+            <i class='fas fa-user pr-2'></i>
+            <span>PROFILE</span>
+        </div>
+        <%end%>
+
+        <div class='d-flex p-3 disabled'>
+            <i class='fas fa-hashtag pr-2'></i>
+            <span>DISCOVER</span>
+        </div>
+
+        <div class='d-flex p-3 disabled '>
+            <i class='fa fa-bar-chart pr-2'></i>
+            <span>STATISTICS</span>
+        </div>
+
+    </div>
+</div>

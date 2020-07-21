@@ -1,66 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class='d-flex'>
+    <div class="tab_container ">
+        <input class="custom-hide " id="tab1" type="radio" name="tabs" checked>
+        <label class='tab-label' for="tab1"><span class="">TWEETS</span></label>
 
+        <input class="custom-hide " id="tab2" type="radio" name="tabs">
+        <label class='tab-label' for="tab2"><span class="">PHOTOS</span></label>
 
+        <input class="custom-hide " id="tab3" type="radio" name="tabs">
+        <label class='tab-label' for="tab3"><span class="">VIDEOS</span></label>
 
+        <section id="content1" class="tab-content custom-hide py-4">
+            <div class="d-flex">
+                <div class='profile-body d-flex'>
+                    <div class='center-cont w-100'>
 
+                        <div class="new-post-area p-4 mx-3 bg-white rounded">
+                            <h5 class="text-light-grey h6 font-weight-bold">TWEET SOMETHING</h5>
+                            <%= render 'tweetform', tweet: @tweet, mention: (@user.username unless @user.nil?) %>
+                        </div>
 
-
-
-<div class="d-flex">
-    <div class='profile-body d-flex'>
-        <div class='center-cont w-100'>
-
-            <div class="new-post-area p-3 m-3 bg-white rounded">
-                <h5>CREATE A TWEET</h5>
-                <%= render 'form', tweet: @tweet %>
+                        <div class=' p-3 m-3 bg-white rounded'>
+                            <p class='tweets-header pb-3 border-bottom'> <%=@tweets.size%> NEW TWEETS </P>
+                            <%@tweets.each do |tweet|%>
+                                <div class='user-card d-flex mb-3'>
+                                    <div class='avatar-cont mr-2'>
+                                        <%= print_image_squar(tweet.author)%>
+                                    </div>
+                                    <div class='card-text p '>
+                                        <h6><%= tweet.author.name.split.map(&:capitalize).join(' ')%></h6>
+                                        <h5 class='mb-0'><%= tweet.content%></h5>
+                                    </div>
+                                </div>
+                            <%end%>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class=' p-3 m-3 bg-white rounded'>
-              <table >
-                  <thead>
-                      <tr>
-                          <th>recent tweets:</th>
-                          <th colspan="3"></th>
-                      </tr>
-                  </thead>
-
-                  <tbody>
-                      <% @sortedtweets.each do |tweet| %>
-                      <tr>
-                          <td><%= tweet.content %></td>
-                          <% if current_user.id == tweet.author.id %>
-                            
-                            <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-                            <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                          <% end %>
-                            <td><%= link_to 'Show', tweet %></td>
-                      </tr>
-                      <% end %>
-                  </tbody>
-              </table>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        <section class='right-sidebar text-center'>
-            <div class=' py-2'>
-              <h5>Who to follow</h5>
-            </div>
-
-            <div class='followed-by py-2'>
-                <%= render 'whotofollow'%>
-            </div>
-
-
         </section>
-    </div> 
+        <section id="content2" class="tab-content custom-hide">
+        <div class=' p-3 m-3 bg-white rounded'>
+            <h2><br><br><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        </div>
+        </section>
+        <section id="content3" class="tab-content custom-hide">
+        <div class=' p-3 m-3 bg-white rounded'>
+            <h2><br><br><br><br><br><br>comming soon!<br><br><br><br><br><br><br><br></h2>
+        </div>
+        </section>
+    </div>
+    <section class='px-3 border-left r-sidebar '>
+        <div class='d-flex  justify-content-between border-bottom'>
+            <h5 class='r-sidebar m-0 d-inline-block  '>WHO TO FOLLOW</h5>
+            <a href='#' class="d-inline-block fa fa-refresh just align-self-center" ></a>
+        </div>
+        <div class='followed-by py-4'>
+            <%= render 'whotofollow'%>
+        </div>
+    </section>
+    </div>
+</div>
 
+</div>
 </div>

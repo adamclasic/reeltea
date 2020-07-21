@@ -1,0 +1,24 @@
+<%= form_with(model: tweet, local: true) do |form| %>
+  <% if tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+      <ul>
+      <% tweet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% mention = add_mention(mention) %>
+  <div class="field d-flex">
+    <%= form.text_field :content, value: "#{mention} ", style: 'flex: 1;'  %>
+    <%= button_tag type: 'submit', class: "button my-button text-grey", id: "register-button" do %>
+        <i class="fa fa-share" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <div class="actions ">
+    <%= form.file_field :image, class: ''%>
+
+  </div>
+<% end %>

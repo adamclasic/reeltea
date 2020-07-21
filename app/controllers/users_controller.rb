@@ -1,15 +1,14 @@
 class UsersController < ApplicationController
-    def show
-        @user = User.find(params[:id])
-        # @user_tweets = @user.tweets
-        # @user_follwers = @user.follwers
-        # @user_followings = @user.followings
-        @tweet = Tweet.new
-    end
+  def show
+    @user = User.includes([:image_attachment]).find(params[:id])
 
-    def index
-        @all_users = User.all
-    end
+    @user_tweets = @user.tweets.includes([:author])
+    @user_followers = @user.followers.includes([:followers]).includes(image_attachment: [:blob])
+    @user_followeds = @user.followeds.includes(image_attachment: [:blob]).includes([:followers])
+    @tweet = Tweet.new
+  end
 
-
+  def index
+    @all_users = User.all
+  end
 end
