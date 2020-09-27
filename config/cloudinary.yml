@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: arremaweb
+  api_key: '826831277686979'
+  api_secret: Dl196cOpyFW5kVOleLON2QoH9DM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: arremaweb
+  api_key: '826831277686979'
+  api_secret: Dl196cOpyFW5kVOleLON2QoH9DM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: arremaweb
+  api_key: '826831277686979'
+  api_secret: Dl196cOpyFW5kVOleLON2QoH9DM
+  enhance_image_tag: true
+  static_file_support: false
