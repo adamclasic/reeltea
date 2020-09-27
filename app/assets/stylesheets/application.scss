@@ -326,6 +326,10 @@ a:hover {
   border-bottom-left-radius: 8px;
 }
 
+.form-control {
+  border: 0 !important;
+}
+
 @keyframes fadeinscale {
   0% {
     transform: scale(0.9);
