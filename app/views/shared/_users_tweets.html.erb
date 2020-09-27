@@ -1,0 +1,14 @@
+<%@user_tweets.each do |tweet|%>
+    <%= link_to user_path(tweet.author_id) do%>
+
+  <div class='user-card d-flex mb-3'>
+      <div class='avatar-cont mr-2'>
+          <%= print_image_squar(tweet.author)%>
+      </div>
+      <div class='card-text p '>
+          <h6><%= tweet.author.name.split.map(&:capitalize).join(' ')%></h6>
+          <% end %>
+          <h5 class='mb-0'><%= tweet.content%></h5>
+      </div>
+  </div>
+<%end%>
